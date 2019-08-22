@@ -1,0 +1,196 @@
+/**index.wxss**/
+page{
+  width: 710rpx;
+  padding: 0 20rpx;
+}
+#address_city{
+  width: 710rpx;
+  padding: 0 20rpx;
+  font-size: 0.8em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 100;
+}
+#city{
+  width: 19%;
+  float: left;
+  padding: 0.6em 0;
+  text-align: center;
+}
+#city image{
+  width: 1em;
+  height: 1em;
+  margin-left: 0.3em;
+}
+#search{
+  float: right;
+  width: 80%;
+  border: 1px solid #ececec;
+  border-radius: 0.3em;
+  padding: 0.4em 0;
+  overflow: hidden;
+}
+#search image{
+  width: 1em;
+  height: 1em;
+  margin-right: 0.2em;
+  margin-left: 0.3em;
+  float: left;
+  position: relative;
+  top: 0.4em;
+}
+#search input{
+  width: 90%;
+  float: left;
+  height: auto;
+  padding: 0;
+  text-align: center;
+  min-height: none;
+}
+
+
+#shop{
+  margin-top: 12%;
+}
+.shop{
+  overflow: hidden;
+  border-bottom: 1px solid #F4F4F4;
+  padding: 30rpx 0;
+}
+.shop:last-child{
+  border: none;
+}
+.shop>image{
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+}
+.shop_content{
+  float: left;
+  width: 380rpx;
+  margin-left: 20rpx;
+}
+.shop_content image{
+  width: 32rpx;
+  height: 32rpx;
+  position: relative;
+  top: 4rpx;
+  margin-right: 0.3em;
+}
+.title_view text{
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.shop_content view{
+  overflow: hidden;
+}
+.title_view{
+  margin-top: 15rpx;
+  overflow: hidden;
+}
+.title_view text,.title_view image{
+  float: left;
+}
+.title_view text:first-child{
+  display: inline-block;
+  width: 76rpx;
+  background-color: #4bca7d;
+  color: white;
+  border-radius: 0.7em;
+  font-size: 24rpx;
+  text-align: center;
+  height: 37rpx;
+  line-height: 37rpx;
+  margin-right: 12rpx;
+  margin-top: 4rpx;
+ }
+.title_view text:last-child{
+  display: inline-block;
+  width: 292rpx;
+}
+.title_view image{
+  margin-left: 12rpx;
+}
+.shop_content view:last-child{
+  font-size: 28rpx;
+  color: #959595;
+  margin-top: 16rpx;
+}
+.shop_content view:last-child{
+  font-size: 22rpx;
+  font-weight: bold;
+  margin-top: 27rpx;
+}
+.title_view_ text{
+  color: #e2c895;
+  border: 1px solid #e2c895;
+  float: left;
+  width: 50rpx;
+  text-align: center;
+  font-size: 22rpx;
+  margin-right: 8rpx;
+  border-radius: 2rpx;
+}
+.address_{
+  float: left;
+  width: 190rpx;
+  overflow: hidden;
+  margin-top: 20rpx;
+}
+.address_ image{
+  width: 40rpx;
+  float: left;
+  margin-left: 120rpx;
+  margin-bottom: 26rpx;
+}
+.address_{
+  text-align: right;
+}
+.address_ text{
+  display: inline-block;
+  width: 100%;
+  color: #c7c7c7;
+  font-size: 24rpx;
+  float: left;
+}
+#nearby_nav{
+  border-bottom: 1px solid #F8F8F8;
+  white-space: nowrap;
+  background-color: white;
+  width: 100%;
+  float: left;
+}
+.text_{
+  display: inline-block;
+  padding: 26rpx 0;
+  margin: 0 26rpx;
+  font-size: 28rpx;
+  position: relative;
+  color: #CECECE;
+  font-weight: bold;
+}
+.text_.click{
+color: black;
+}
+.text_.click text{
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  bottom: 0;
+  border-bottom: 3px solid black
+}
+.empty{
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 7%;
+  color: rgb(175, 171, 171)
+}

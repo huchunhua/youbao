@@ -1,0 +1,45 @@
+@import "/icon.wxss";
+@import "/base-rpx.wxss";
+.menu{
+    margin: 0 !important;
+}
+.goods-item .goods-image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right:30rpx;
+}
+.goods-item .action .goods-num {
+    font-size: 24rpx;
+    color: #999;
+}
+.goods-item .action .stepper image {
+    width: 36rpx;
+    height: 36rpx;
+    display: inline-flex;
+    float:left;
+
+}
+.goods-item .action .stepper text {
+    line-height: 36rpx;
+    display: inline-flex;
+    font-size: 24rpx;
+    padding: 0 20rpx;
+    color: #666;
+    float:left;
+}
+.goods-item .content .goods-desc{
+    font-size: 24rpx;
+    line-height:40rpx;
+}
+.goods-item .content .goods-price{
+    font-size: 28rpx;
+    line-height:32rpx;
+}
+.goods-item .content .goods-total {
+     font-size: 24rpx;
+     line-height:32rpx;
+ }
+.buy-button button {
+    height: 80rpx;
+    line-height: 80rpx;
+}

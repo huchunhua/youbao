@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<layout id='personal_de'>
+<view class="personal_de">
+  <!-- <open-data type="userAvatarUrl" wx:if="{{!avatar}}" class="avatar_image"></open-data> -->
+  <image src='{{avatar}}' mode='widthFix' wx:if="{{avatar}}"  bindtap="openchangeImg"></image>
+  <view>
+      点击上传头像
+  </view>
+</view>
+<view class='list'>
+  <text>昵称</text>
+  <open-data id="nickname" type="userNickName" style="font-size: 28rpx;height: 1.4rem;line-height: 1.4rem"></open-data>
+</view>
+<view class='list'>
+  <text>账户手机</text>
+  <input  placeholder='请输入手机号码' placeholder-style='color:#E2E2E2'  bindinput='mobile' value='{{phone}}' disabled="disabled"/>
+</view>
+<view class='list'>
+  <text>真实姓名</text>
+  <input bindinput="truename" placeholder="请输入真实姓名" value="{{truename}}" placeholder-style='color:#E2E2E2'/>
+</view>
+<view class='list list_'>
+  <text>性别</text>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker" style='color:{{index==""?"#E2E2E2":black}}'>
+      {{index==""?"请选择性别":array[index]}}
+    </view>
+  </picker>
+  <image src='/image/more.png' mode='widthFix'></image>
+</view>
+<view class='list list_'>
+  <text>出生日期</text>
+  <picker mode="date" value="{{age}}" fields="day" end='{{end_time}}' bindchange="age">
+    <view class="picker" style='color:{{age==""||age=="null"||age==null?"#E2E2E2":black}}'>
+      {{age==""||age=="null"||age==null?"请选择日期":age}}
+    </view>
+  </picker>
+  <image src='/image/more.png' mode='widthFix'></image>
+</view>
+<view class='list'>
+  <text>车牌号码</text>
+  <input bindinput="carnum" placeholder="请输入车牌号码,例如川A12345" value="{{carnum}}" placeholder-style='color:#E2E2E2'/>
+</view>
+<modal-box class="changeimgModal {{ischangeimgModal == true ? 'show' : ''}} picker">
+  <dialog>
+    <view class="changewrap">
+      <view bindtap="changeimg" data-sourceType="camera" class="border_bottom">拍照</view>
+      <view bindtap="changeimg" data-sourceType="album">手机相册</view>
+    </view>
+    <view class="canclebtn" bindtap="closechangeImg">
+      <view>取消</view>
+    </view>
+  </dialog>
+</modal-box>
+<button id='add' bindtap='submit'>保 存</button>
+</layout>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>

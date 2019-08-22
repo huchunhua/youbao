@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view id='address_city'>
+  <view id='city'>
+    成都<image src='/image/add_more.png' mode='widthFix'></image>
+  </view>
+  <view id='search'>
+    <image src='/image/search.png' mode='widthFix'></image>
+    <input focus='true' bindinput='change' bindconfirm="search" type='text' confirm-type='search' placeholder='搜索加油站'></input>
+  </view>
+</view>
+<view id='shop'>
+  <block wx:for="{{shop}}" wx:key="{{index}}">
+    <view class='shop'>
+      <image data-id='{{item.id}}' bindtap='go_shop' src='{{item.seller_logo}}' mode='widthFix'></image>
+      <view data-id='{{item.id}}' bindtap='go_shop' class='shop_content'>
+        <view class="title_view"><text>正常</text><text>{{item.seller_name}}</text></view>
+        <view class='title_view_'><text wx:for="{{item.seller_oil_category}}">{{item.oil_name}}</text></view>
+      </view>
+      <view class='address_' bindtap='address_click' data-latitude='{{item.seller_latitude}}' data-longitude='{{item.seller_longitude}}' data-name='{{item.seller_name}}'>
+        <image src='/image/de_address.png' mode='widthFix'></image>
+        <text>距离{{item.distance}}km</text>
+      </view>
+    </view>
+  </block>
+  <text style='display:{{shop==""?"block":"none"}}' class='empty'>无记录</text>
+</view>

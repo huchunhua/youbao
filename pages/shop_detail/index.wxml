@@ -1,0 +1,94 @@
+<!--index.wxml-->
+<view class='shop'>
+    <image src='{{seller_logo}}'></image>
+    <view class='shop_content'>
+        <text>{{seller_name}}</text>
+        <view>
+            <image src='/image/service.png' mode='widthFix'></image>
+            {{seller_service}}
+        </view>
+        <view>
+            <image src='/image/home_time.png' mode='widthFix'></image>
+            营业时间：{{seller_time_start}}-{{seller_time_end}}
+        </view>
+    </view>
+</view>
+<view class='detail_' bindtap='go_map'>
+    <text>地址：{{seller_address}}</text>
+    <image src='/image/de_address.png' mode='widthFix'></image>
+</view>
+<view class='detail_' style='display:{{seller_phone=="null"||seller_phone==""||seller_phone==null?"none":"block"}}'>
+    <text>电话：{{seller_phone}}</text>
+    <image src='/image/de_phone.png' mode='widthFix' bindtap='calling'></image>
+</view>
+
+<view class='detail_ detail' style='display:{{article=="null"||article==""||article==null?"none":"block"}}'>
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>
+
+<view id='coupon' style='display:{{coupon_free==""?"none":"inline-block"}}'>
+    <text>优惠券</text>
+    <view>
+        <block wx:for="{{coupon_free}}" wx:key="{{index}}">
+            <view class='coupon_list'
+                  style='color:{{can_get[index]==0?"#CECECE":item.coupon_t_giveout==item.coupon_t_total?"#CECECE":"white"}}'>
+                <image src='{{can_get[index]==0?"/image/de_coupon_.png":item.coupon_t_giveout==item.coupon_t_total?"/image/de_coupon_.png":"/image/de_coupon.png"}}'></image>
+                <view class="coupon_info" data-id="{{item.id}}" bindtap='go_detail'>
+                    <text class='coupon_list1'>￥</text>
+                    <text class='coupon_list2'>{{item.coupon_t_money}}</text>
+                    <text class='coupon_list3'>{{item.coupon_t_title}}</text>
+                    <text class='coupon_list4'>{{item.coupon_t_limit==0?"无使用限制":"满"+item.coupon_t_limit+"元可用"}}</text>
+                    <text class='coupon_list5'>有效期：{{item.coupon_t_starttime}} - {{item.coupon_t_endtime}}</text>
+                </view>
+                <text class='money'
+                      style='{{can_get[index]==0?"background-color:#EDEDED;color:#CECECE":item.coupon_t_giveout==item.coupon_t_total?"background-color:#EDEDED;color:#CECECE":""}}'
+                      data-id='{{item.id}}' data-eq='{{index}}'
+                      bindtap='{{can_get[index]==0?"":item.coupon_t_giveout==item.coupon_t_total?"":"tack"}}'>
+                    {{can_get[index]==0?"已领取":item.coupon_t_giveout==item.coupon_t_total?"已领完":"免费领取"}}
+                </text>
+            </view>
+        </block>
+    </view>
+</view>
+<view id='voucher' style='display:{{coupon_buy==""?"none":"inline-block"}}'>
+    <text>代金券</text>
+    <block wx:for="{{coupon_buy}}" wx:key="{{index}}">
+        <view class='voucher'>
+            <view class="coupon_info" data-id="{{item.id}}" bindtap='go_detail' style="height:160rpx;width:500rpx;">
+                <view class='title'>
+                    <text>{{item.coupon_t_title}}</text>
+                </view>
+                <view class='voucher_service'>
+                    <text>{{item.start_time}}至{{item.end_time}}</text>
+                </view>
+                <view class='voucher_money'>
+                    <text class='v_money'>￥{{item.coupon_t_price}}</text>
+                </view>
+            </view>
+            <text class='v_sales'>半年销量 {{item.coupon_t_giveout}}</text>
+            <text class='voucher_btn' bindtap='buy' data-id="{{item.id}}">抢 购</text>
+        </view>
+    </block>
+</view>
+<view id='remark' style='{{seller_intro?"display:block":"display:none"}}'>
+    <rich-text nodes="{{seller_intro}}"></rich-text>
+</view>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>
+
+
+<view id='fixed_out' style='{{show?"display:block":"display:none"}}'></view>
+<view id='fixed' style='{{show?"display:block":"display:none"}}'>
+    <text id='fixed_0'>红包来了</text>
+    <image src='/image/sign_bg.png' mode='widthFix'></image>
+    <image src='/image/three.png' id='bg' mode='widthFix'></image>
+    <text id='fixed_1'>{{coupon_title}}</text>
+    <text id='fixed_2'>{{coupon_limit==0?"无门槛通用券":"满"+coupon_limit+"元可用"}}</text>
+    <view id='fixed_3'>
+        <text>￥</text>
+        <text>{{coupon_money}}</text>
+    </view>
+    <text id='fixed_4'>有效期：{{coupon_start}} - {{coupon_end}}</text>
+    <view id='closed' bindtap='closed'></view>
+    <view id='more' bindtap='more'></view>
+</view>

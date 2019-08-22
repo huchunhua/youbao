@@ -1,0 +1,110 @@
+
+item.coupon-card {
+    position:relative;
+    line-height:36rpx;
+    font-size:32rpx;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100rpx;
+    height:unset !important;
+    display:block;
+    margin:0 20rpx;
+    background:#FFF9F9;
+    border:1px solid #E96C6A;
+    border-radius: 10rpx;
+    box-sizing: content-box;
+}
+item.disable.coupon-card {
+    background:#FCFCFC;
+    border:1px solid #E2E2E2;
+}
+item.coupon-card .item-body {
+    display:flex;
+    /*width:676rpx;*/
+    margin:0 20rpx;
+    border-bottom:1px dashed #E96C6A;
+    padding:20rpx 0;
+    height:100rpx;
+    overflow:hidden;
+
+}
+item.disable.coupon-card .item-body {
+    border-bottom:1px dashed #B5B5B5;
+ }
+
+item.coupon-card .coupon-price {
+    margin-right:20rpx;
+
+}
+item.coupon-card .coupon-price text {
+    font-size:76rpx;
+    color:#EB6C69 ;
+    display:inline-flex;
+    line-height:64rpx;
+    font-weight: 400;
+    font-stretch: extra-condensed;
+    letter-spacing: -2px
+}
+item.coupon-card .coupon-price text:first-child{
+    font-size: 28rpx;
+    font-weight: normal;
+}
+item.disable.coupon-card .coupon-price text {
+    color:#B5B5B5 ;
+}
+item.coupon-card .content {
+    line-height: 1.25em;
+    flex:1;
+}
+item.coupon-card .content .coupon-limit {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width: 570rpx;
+    line-height:36rpx;
+    height:32rpx;
+    font-size:22rpx;
+    background: transparent;
+}
+item.coupon-card .content .coupon-title {
+    display:block;
+    height:32rpx;
+    line-height:32rpx;
+    background: transparent;
+}
+item.coupon-card .content .coupon-title text {
+    float: left;
+    line-height:32rpx;
+    font-size:28rpx;
+    font-weight:bold;
+}
+item.disable.coupon-card .content .coupon-title text {
+    color: #999;
+}
+item.coupon-card .item-footer{
+    padding:15rpx 20rpx;
+    text-align: right;
+    height:80rpx;
+
+}
+item.coupon-card .item-footer text{
+    line-height: 50rpx;
+    font-size: 22rpx;
+    color: #999;
+    float:left;
+}
+item.coupon-card .item-footer button{
+    color: #E96C6A;
+    background-color:#FFF9F9 !important;
+}
+item.coupon-card .item-footer button:after {
+    border-color: #E96C6A;
+}
+
+item.disable.coupon-card .item-footer button{
+    color: #ccc;
+    background-color:#FCFCFC !important;
+}
+item.disable.coupon-card .item-footer button:after {
+    border-color: #D8D8D8;
+}

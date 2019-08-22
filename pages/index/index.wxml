@@ -1,0 +1,79 @@
+<layout id="layout">
+    <view class="sharetips" wx:if="{{showTips}}">
+        <view class="to_top"></view>
+        <icon class="icon-roundclose" bindtap="closeTips"></icon>
+        点击添加到我的小程序，微信首页下拉即可快速访问
+    </view>
+    <view class="block-header">
+        <uView class="navigationBar {{showHeaderShadow ? 'shadow' : ''}}">
+            <list class="grid no-border col-4">
+                <item bindtap="onScanCode">
+                    <image src="/assets/images/navbar-scan.png"/>
+                    <text>扫码支付</text>
+                </item>
+                <item bindtap="jumpToNearby">
+                    <image src="/assets/images/navbar-auto.png"></image>
+                    <text>汽车服务</text>
+                </item>
+                <item bindtap="jumpToReceive">
+                    <image src="/assets/images/navbar-welfare.png"/>
+                    <text>福利中心</text>
+                </item>
+                <item bindtap="jumpToMember">
+                    <image src="/assets/images/navbar-user.png">
+                        <tag class="badge"/>
+                    </image>
+                    <text>个人中心</text>
+                </item>
+            </list>
+        </uView>
+        <uView class="index-swiper">
+            <swiper class="screen-swiper" autoplay="true" interval="3000" duration="500">
+                <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}" bindtap="onSwiperClick" data-index="{{index}}">
+                    <image src="{{item.banner_image}}" mode='aspectFill'/>
+                </swiper-item>
+            </swiper>
+        </uView>
+    </view>
+    <view class="block-nearby">
+        <bar>
+            <uView class='action'>
+                附近
+            </uView>
+            <uView class='action'>
+                <button class="round shadow sm" bindtap="onMapMode">
+                    <icon class='icon-location'/>
+                    地图模式
+                </button>
+            </uView>
+        </bar>
+        <scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+            <item class="{{tabActive == 0 ? 'active' : ''}}" bindtap='onTabSelect' data-type="0">
+                周边油站
+            </item>
+            <item class="{{tabActive == 1 ? 'active' : ''}}" bindtap='onTabSelect' data-type="1">
+                优惠油站
+            </item>
+            <item class="{{tabActive == 2 ? 'active' : ''}}" bindtap='onTabSelect' data-type="2">
+                汽车服务
+            </item>
+        </scroll-view>
+    </view>
+    <uView class="block-station">
+        <list class="menu menu-avatar no-padding">
+            <seller-item wx:for="{{dataList}}" wx:key="{{index}}" sellerInfo="{{item}}"></seller-item>
+        </list>
+    </uView>
+    <view class="weiget-share" bindtap="onShare">
+        <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/home-share.png"/>
+    </view>
+</layout>
+<view id="firstLoginModal" wx:if="{{showFirstModal}}">
+    <view class="modal-container ">
+        <text class="modal-action icon-roundclose" bindtap="onModalClose"></text>
+    </view>
+    <view class="modal-footer">
+        <button class="modal-receive" bindtap="{{_isBind ? 'onClickReceive' : ''}}" open-type="{{!_isBind ? 'getPhoneNumber' : ''}}" bindgetphonenumber="{{!_isBind ? 'getPhoneNumber' : ''}}">立即领取</button>
+    </view>
+</view>
+<loading fix size="large" wx:if="{{!pageLoaded}}">加载中</loading>

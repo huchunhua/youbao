@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view id='integraldatail'>
+  <image id='bg' src='/image/integral.png' mode='widthFix'></image>
+    <text id='title'>我的积分</text>
+    <view id='total'>{{amount}}</view>
+    <view id='record'>
+      <image src='/image/in1.png' mode='widthFix'></image>
+      <text>积分记录：获取 {{income}}  使用 {{reduce}}</text>
+    </view>
+    <image id='right' src='/image/in2.png' mode='widthFix'></image>
+</view>
+<view id='integral_nav'>
+  <view bindtap='click' data-id="0"><text class='{{type==0?"click":""}}'>全部</text></view>
+  <view bindtap='click' data-id="1"><text class='{{type==1?"click":""}}'>获取</text></view>
+  <view bindtap='click' data-id="2"><text class='{{type==2?"click":""}}'>使用</text></view>
+</view>
+
+<scroll-view scroll-y="true" style='display:{{type==0?"block":"none"}}'>
+  <block wx:for='{{list}}' wx:key="{{index}}">
+      <view class='list'>
+        <text class='title'>{{item.remark}}</text>
+        <text class='time'>{{item.time}}</text>
+        <text class='{{item.type==1?"plus":"min"}}'>{{item.type==1?"+":"-"}}{{item.num}}</text>
+      </view>
+    </block>
+     <text style='display:{{list==""?"block":"none"}}' class='empty'>无记录</text>
+</scroll-view>
+<scroll-view scroll-y="true" style='display:{{type==1?"block":"none"}}'>
+  <block wx:for='{{list1}}' wx:key="{{index}}">
+      <view class='list'>
+        <text class='title'>{{item.remark}}</text>
+        <text class='time'>{{item.time}}</text>
+        <text class='{{item.type==1?"plus":"min"}}'>{{item.type==1?"+":"-"}}{{item.num}}</text>
+      </view>
+    </block>
+     <text style='display:{{list1==""?"block":"none"}}' class='empty'>无记录</text>
+</scroll-view>
+<scroll-view scroll-y="true" style='display:{{type==2?"block":"none"}}'>
+  <block wx:for='{{list2}}' wx:key="{{index}}">
+      <view class='list'>
+        <text class='title'>{{item.remark}}</text>
+        <text class='time'>{{item.time}}</text>
+        <text class='{{item.type==1?"plus":"min"}}'>{{item.type==1?"+":"-"}}{{item.num}}</text>
+      </view>
+    </block>
+     <text style='display:{{list2==""?"block":"none"}}' class='empty'>无记录</text>
+</scroll-view>

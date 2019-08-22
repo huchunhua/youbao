@@ -1,0 +1,123 @@
+@import "/icon.wxss";
+@import "/base-rpx.wxss";
+Page{
+  background: #FFF;
+}
+.border_bottom{
+  border-bottom: 1px solid #F4F4F4;
+}
+.font_grey{
+    color:#707070;
+}
+.banner_bg{
+ width: 100%;
+ height: 240rpx; 
+}
+.padding30{
+  padding:30rpx 0;
+}
+.content,.coupon{
+  width: 690rpx;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 2rpx rgba(160,160,158,.18),-2rpx -2rpx rgba(160,160,158,.18);
+  background-color: #fff;
+}
+.content{
+  padding: 10rpx 30rpx;
+  height: 396rpx;
+  position: absolute;
+  top:48rpx;
+  left: 50%;
+  margin:0 -345rpx;
+}
+.content .shop_img{
+  margin-right: 30rpx;
+  width: 150rpx;
+  height: 110rpx;
+  border-radius: 4rpx;
+}
+.shop_name{
+  margin-top:24rpx;
+  margin-bottom: 20rpx;
+}
+.distance{
+  font-size: 24rpx;
+}
+.icon_distance{
+  display: inline-block;
+  margin-right: 10rpx;
+  width: 15rpx;
+  height:19rpx ;
+}
+.address_wrap{
+  position: relative;
+}
+.icon,.icon_wrap{
+  display: inline-block;
+  border-left: 1px solid #F4F4F4;
+  padding:0 36rpx;
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+.address{
+  max-width: calc(100% - 100rpx);
+  line-height: 40rpx;
+}
+.icon_wrap{
+  position: absolute;
+  top:0;
+  right: 0;
+  margin:30rpx 0;
+  padding:0 20rpx;
+  height: calc(100% - 60rpx);
+}
+.icon_navigation{
+  width: 29rpx;
+  height: 30rpx; 
+  background-size: 29rpx 30rpx;
+  background-image: url(https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil_clean/icon_navigation.png);
+}
+.icon_phone{
+  width: 26rpx;
+  height: 26rpx;
+  background-size: 26rpx 26rpx;
+  background-image: url(https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil_clean/icon_phone.png)
+}
+/*优惠券*/
+.coupon{
+  margin:220rpx 30rpx 0;
+  padding:30rpx;
+}
+.coupon>view{
+  margin-bottom: 30rpx;
+  font-size: 26rpx;
+  color:#575757;
+}
+.coupon>view.flex{
+  margin-bottom: 0;
+}
+.fontthick{
+  font-weight: 700;
+}
+.desc_tit{
+  width: 130rpx;
+}
+rich-text{
+  line-height: 36rpx;
+}
+.coupon .tips{
+  line-height: 36rpx;
+  color:#e66a65;
+}
+.btn_buy{
+  margin:30rpx auto; 
+  width:  690rpx;
+  height: 86rpx;
+  line-height: 86rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color:#0e0e0e;
+  background-color: #fece00;
+  font-size: 32rpx;
+
+}

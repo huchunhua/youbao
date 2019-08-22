@@ -1,0 +1,54 @@
+/**index.wxss**/
+page{
+  width: 670rpx;
+  padding: 0 40rpx;
+}
+#name{
+  margin-top: 68rpx;
+  
+  text-align: center;
+}
+#name image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+  position: relative;
+  top: 3rpx;
+}
+#name text{
+  font-size: 30rpx;
+  color: #333333;
+}
+#money{
+  color: #333333;
+  font-size: 60rpx;
+  text-align: center;
+  margin-top: 52rpx;
+}
+#remark{
+  color: #9E9D9D;
+  font-size: 26rpx;
+  margin-top: 47rpx;
+  text-align: center;
+}
+.list_one{
+  margin-top: 69rpx;
+}
+.list{
+  width: 670rpx;
+  margin-bottom: 35rpx;
+  font-size: 26rpx;
+  color: #666666;
+  overflow: hidden;
+}
+.list text:first-child{
+  float: left;
+}
+.list text:last-child{
+  float: right;
+  text-align: right;
+}
+.money{
+  padding-top: 35rpx;
+  border-top: 2rpx solid #F4F4F4;
+}

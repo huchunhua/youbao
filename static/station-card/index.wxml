@@ -1,0 +1,70 @@
+<item class="station-card">
+    <view class="item-body">
+        <uView class="station-logo" bindtap="onStation"
+               data-id="{{stationInfo.id}}" data-type="{{stationInfo.seller_type}}"
+               wx:if="{{stationInfo.seller_type == 1}}">
+            <image class="radius lg" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/station-logo.png">
+                <tag class="badge" wx:if="{{false}}"></tag>
+            </image>
+        </uView>
+        <uView class="station-logo" bindtap='onStation'
+               data-id="{{stationInfo.id}}" data-type="{{stationInfo.seller_type}}"
+               wx:if="{{stationInfo.seller_type == 2}}">
+            <image class="radius lg" src="{{stationInfo.seller_logo}}">
+                <tag class="badge" wx:if="{{false}}"></tag>
+            </image>
+        </uView>
+        <uView class='content' bindtap="onStation" data-id="{{stationInfo.id}}" data-type="{{stationInfo.seller_type}}">
+            <view class="seller-name">
+                <text class="station-name">{{stationInfo.seller_name}}</text>
+                <image class="radius lg station-tag" src="/assets/images/icon-distcount.png"
+                       wx:if="{{stationInfo.seller_isDiscount}}"/>
+                <image class="radius lg station-tag" src="/assets/images/icon-reduce.png"
+                       wx:if="{{stationInfo.seller_isReduce && stationInfo.seller_type == 1}}"/>
+            </view>
+            <view class='text-gray text-sm seller-address'>
+                <view class='seller-star'>
+                    <image wx:for="{{stationInfo.seller_star}}" wx:key="{{index}}" src='/assets/images/star.png'></image>
+                </view>
+                {{stationInfo.seller_time_start}} - {{stationInfo.seller_time_end}}
+            </view>
+            <view class='text-gray text-sm seller-extend'>
+                <view class="seller-oil" wx:if="{{stationInfo.seller_type == 1}}">
+                    <capsule class="radius oil-item" wx:if="{{stationInfo.seller_oil.price_0}}">
+                        <tag class='bg-yellow text-white sm'>#0</tag>
+                        <!-- <tag class="line-yellow sm">{{stationInfo.seller_oil.price_0}}</tag> -->
+                    </capsule>
+                    <capsule class="radius oil-item" wx:if="{{stationInfo.seller_oil.price_92}}">
+                        <tag class='bg-yellow text-white sm'>#92</tag>
+                        <!-- <tag class="line-yellow sm">{{stationInfo.seller_oil.price_92}}</tag> -->
+                    </capsule>
+                    <capsule class="radius oil-item" wx:if="{{stationInfo.seller_oil.price_95}}">
+                        <tag class='bg-yellow text-white sm'>#95</tag>
+                        <!-- <tag class="line-yellow sm">{{stationInfo.seller_oil.price_95}}</tag> -->
+                    </capsule>
+                    <capsule class="radius oil-item" wx:if="{{stationInfo.seller_oil.price_98}}">
+                        <tag class='bg-yellow text-white sm'>#98</tag>
+                        <!-- <tag class="line-yellow sm">{{stationInfo.seller_oil.price_98}}</tag> -->
+                    </capsule>
+                </view>
+                <view class="seller-service" wx:if="{{stationInfo.seller_type != 1}}">
+                    <view><image class="lg item-icon" src="/assets/images/icon-service.png"/>{{stationInfo.seller_service}}</view>
+                </view>
+            </view>
+        </uView>
+    </view>
+    <view class="item-footer {{!deploy ? 'deploy' : ''}}" style="height: {{stationInfo.deploy_height}}rpx"
+          wx:if="{{stationInfo.deploy_height > 0}}">
+        <icon class="foot-action icon-{{!deploy ? 'unfold' : 'fold'}}" bindtap="showStationExtend"
+              data-index="{{index}}" wx:if="{{stationInfo.deploy_height > 50}}"/>
+        <view class='foot-item text-gray text-sm' wx:if="{{stationInfo.seller_isPromotion}}">
+            <image class="lg item-icon" src="/assets/images/icon-activity.png"/>
+            <text>{{stationInfo.seller_oil.remark}}</text>
+        </view>
+        <view class='foot-item text-gray text-sm' wx:if="{{stationInfo.seller_isDiscount}}"
+              wx:for="{{stationInfo.seller_coupon}}" wx:for-item="coupon" wx:key="{{index}}">
+            <image class="lg item-icon" src="/assets/images/icon-coupon.png"/>
+            <text>{{coupon.coupon_t_title}}</text>
+        </view>
+    </view>
+</item>

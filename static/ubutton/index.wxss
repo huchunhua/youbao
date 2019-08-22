@@ -1,0 +1,17 @@
+
+.invisibleclass {
+    width: auto !important;
+    border: none;
+    text-align: unset;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    background: transparent !important;
+    color: inherit;
+    border-radius: 0;
+    font-size: inherit;
+    display: block;
+}
+.invisibleclass:after{
+    border: none;
+}

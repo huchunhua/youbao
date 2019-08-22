@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="share_header">
+    <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/share_gift/share_header.png"></image>
+    <view class="type_oldman" wx:if="{{!isFirstLogin && !isShowCoupon}}">
+        <text class="block text-l">您已经是老用户，赶紧邀请好友赚油票</text>
+        <text class="text-l" bindtap="onIndex"><text class="toUser text-green text-bold padding-left-xs padding-right-xs" bindtap="onIndex">返回首页</text></text>
+    </view>
+    <view class="share_action type_btns" wx:if="{{!isFirstLogin && !isShowCoupon}}">
+
+        <button open-type="share">
+<!--             <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/share_gift/icon_social.png"></image>
+            分享到朋友圈 -->
+        </button>
+        <button bindtap="onShowSnsModal">
+<!--             <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/share_gift/icon_friend.png"></image>
+            分享给好友 -->
+        </button>
+    </view>
+    <view class="share_action type_input" wx:if="{{isFirstLogin}}">
+        <form-group>
+            <input class="radius" maxlength="11" placeholder="验证手机号码领取加油券" bindinput="mobileBind_mobileInput"/>
+        </form-group>
+        <form-group>
+            <input class="radius" maxlength="11" placeholder="输入验证码" bindinput="mobileBind_seccodeInput"/>
+            <button class="shadow" bindtap="onGetSeccode" open-type="getUserInfo" bindgetuserinfo="onGetSeccode" disabled="{{mobileBindCfg.disabled}}">{{mobileBindCfg.countText}}</button>
+        </form-group>
+            <button class="block bg-black lg btn-receive" type="default" bindtap="onReceive">领取油券
+            </button>
+    </view>
+    <view class="share_action type_coupon" wx:if="{{isShowCoupon}}">
+        <view class="coupon_tips">
+            <text class="block text-xl"><text class="toGift text-green text-bold">「新用户大礼包」</text>已发放到您的账户</text>
+            <text class="text-l" bindtap="onIndex">请进入<text class="toUser text-green text-bold padding-left-xs padding-right-xs" bindtap="onIndex">个人中心</text>查看</text>
+        </view>
+    </view>
+</view>
+<view class="page_block share_friends" wx:if="{{inviteList.length > 0 && !isShowCoupon}}">
+    <view class="block_title">
+        <text>已邀请好友</text>
+    </view>
+    <view class="block_body">
+        <view class="friends_item" wx:for="{{inviteList}}" wx:key="{{index}}">
+            <text>{{item.nickname ? item.nickname : '优宝用户'}}</text>
+            <text>{{item.time}}</text>
+        </view>
+    </view>
+</view>
+<!-- <view class="page_block share_rule">
+    <view class="block_title">
+        <text>活动规则</text>
+    </view>
+    <view class="block_body">
+        <text>活动期间新用户进入分享页面输入并验证手机号，即可领取“68元新春福袋一份”（含45元油券）。新用户若使用优宝成功支付，则推荐人可获得分享礼包一份。
+        </text>
+        <text>温馨提示：获取的奖励请在指定时间内使用，逾期失效。</text>
+        <text>该活动最终解释权归中国石油所有。</text>
+    </view>
+</view> -->
+<modal-box class="toSnsModal {{isShowSnsModal ? 'show' : ''}}" wx:if="{{isShowSnsModal}}">
+    <dialog>
+        <view class="snsModal-bg" style="">
+            <bar class="justify-end none-bg text-white">
+                <view class="action" bindtap="onHideSnsModal">
+                    <icon class="icon-close"></icon>
+                </view>
+            </bar>
+            <text class="snsModal-nickname">{{member_info.nickname}}</text>
+        </view>
+        <bar>
+            <view class="action margin-0 flex-sub solid-left" bindtap="onSaveImage" data-id="{{member_info.id}}"><icon class="icon-share"></icon>保存图片</view>
+        </bar>
+    </dialog>
+</modal-box>

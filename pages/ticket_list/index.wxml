@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<layout id="layout">
+<view id='ticket'>
+    <view class='{{type==1?"nav":""}}' bindtap='nav' data-id="1">
+        油站券
+        <text></text>
+    </view>
+    <view class='{{type==2?"nav":""}}' bindtap='nav' data-id="2">
+        优惠券
+        <text></text>
+    </view>
+</view>
+
+<scroll-view scroll-y="true" wx:if="{{type == 1}}">
+    <block wx:for='{{list1}}' wx:key="{{index}}">
+        <uView class='coupon' bindtap='click_' data-id="{{item.tid}}">
+            <image class="coupon-badge" wx:if="{{item.type == 1}}" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/badge-oil.png"></image>
+            <image class="coupon-badge" wx:if="{{item.type == 3}}" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/badge-non.png"></image>
+            <image class='coupon_bg' src='/image/coupon.png'></image>
+            <view class='coupon_shop'>
+                <image class='{{item.state==1?"":"click"}}' src='{{item.logo}}'></image>
+            </view>
+            <text class='coupon_content1' style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.title}}</text>
+            <text class='coupon_content2' style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.jingle}}</text>
+            <text class='coupon_content3' style='color:{{item.state==1?"":"#C9C9C9"}}'>有效期至{{item.end_time}}</text>
+            <view class='money'>
+                <text style='color:{{item.state==1?"":"#C9C9C9"}}'>￥</text>
+                <text style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.money}}</text>
+            </view>
+            <text style='color:{{item.state==1?"":"#C9C9C9"}}' class='remark'
+                  style='{{item.state=="1"?"inline-block":"none"}}'>
+                {{item.ulimit=="0.00"?"无门槛通用":"满"+item.ulimit+"元可使用"}}
+            </text>
+            <text style='color:{{item.state==1?"":"#C9C9C9"}}' class='end_time'>{{item.tips}}</text>
+            <text style='background-color:{{item.state==1?"":"#717171"}}' class='de'>
+                {{item.state=="1"?"可使用":item.state=="2"?"已失效":item.state=="3"?"已过期":item.state=="4"?"已作废":""}}
+            </text>
+        </uView>
+    </block>
+    <text style='display:{{list1==""?"block":"none"}}' class='empty'>无记录</text>
+</scroll-view>
+
+<scroll-view scroll-y="true" wx:if="{{type == 2}}">
+    <block wx:for='{{list2}}' wx:key="{{index}}">
+        <uView class='coupon' bindtap='click' data-id="{{item.id}}">
+            <image class="coupon-badge" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/badge-auto.png"></image>
+            <image class='coupon_bg' src='/image/coupon.png'></image>
+            <view class='coupon_shop'>
+                <image class='{{item.state==1?"":"click"}}' src='{{item.logo}}'></image>
+            </view>
+            <text class='coupon_content1' style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.title}}</text>
+            <text class='coupon_content2' style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.jingle}}</text>
+            <text class='coupon_content3' style='color:{{item.state==1?"":"#C9C9C9"}}'>有效期至{{item.end_time}}</text>
+            <view class='money'>
+                <text style='color:{{item.state==1?"":"#C9C9C9"}}'>￥</text>
+                <text style='color:{{item.state==1?"":"#C9C9C9"}}'>{{item.money}}</text>
+            </view>
+            <text style='color:{{item.state==1?"":"#C9C9C9"}}' class='remark'
+                  style='{{item.state=="1"?"inline-block":"none"}}'>
+                {{item.ulimit=="0.00"?"无门槛通用":"满"+item.ulimit+"元可使用"}}
+            </text>
+            <text style='color:{{item.state==1?"":"#C9C9C9"}}' class='end_time'>{{item.tips}}</text>
+            <text style='background-color:{{item.state==1?"":"#717171"}}' class='de'>
+                {{item.state=="1"?"立即使用":item.state=="2"?"已失效":item.state=="3"?"已过期":item.state=="4"?"已作废":""}}
+            </text>
+        </uView>
+    </block>
+    <text style='display:{{list2==""?"block":"none"}}' class='empty'>无记录</text>
+</scroll-view>
+    <view class="weiget-share" bindtap="goHome">
+        <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/addoil.png"/>
+    </view>
+</layout>

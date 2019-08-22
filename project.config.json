@@ -1,0 +1,104 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkSiteeMap": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wxa3c75aa6cb320c59",
+	"projectname": "oil",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": 0,
+					"name": "pay",
+					"pathName": "pages/pay_/index",
+					"query": "q=https%3a%2f%2foil.hkyx365.com%2foli%2fgateway%2fcashier%3fid%3deyJ0eXBlIjoiQ0FTSFBPUyIsImRhdGEiOiJWakpKTFk4S1NxZEhOSjVUeVkzcDl5ckczdkV3RlN3MzdEcnU2SFNZRG5zSVlzQ1FDdHA1bTlIcldCbk40ampQTVZxWHVQU2tQWmJlWmUwNDFTUmswVUZSZXdGamVDXC9LXC84Y0N5cFFCTUU5Qlg4VmppRmoreTFoU2ZDUGNkTXZaZnM0TUx0SkdPTmpZUmFRT0RzUHhQZz09In0%3d",
+					"scene": "1011"
+				},
+				{
+					"id": -1,
+					"name": "pay_ok",
+					"pathName": "pages/pay_ok/index",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 2,
+					"name": "share",
+					"pathName": "pages/share/index",
+					"query": "_id=49"
+				},
+				{
+					"id": -1,
+					"name": "优惠券购买",
+					"pathName": "pages/buy/seller/index",
+					"query": "id=32"
+				},
+				{
+					"id": -1,
+					"name": "buy",
+					"pathName": "pages/buy/index",
+					"query": "id=41",
+					"scene": "1011"
+				},
+				{
+					"id": 5,
+					"name": "扫描二维码进入专题页面",
+					"pathName": "pages/codeclean/index",
+					"query": "seller_id=149",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "扫码进入商家详情",
+					"pathName": "pages/shop_detail/index",
+					"query": "id=148",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "优途进入",
+					"pathName": "pages/ticket_list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "扫码领券",
+					"pathName": "pages/codeget_vouchers/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

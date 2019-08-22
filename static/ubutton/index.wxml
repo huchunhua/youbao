@@ -1,0 +1,6 @@
+
+<form bindsubmit="onFormIdShadowSubmit" report-submit="true">
+    <button formType="submit" hover-class="none" class='invisibleclass'>
+        <slot></slot>
+    </button>
+</form>

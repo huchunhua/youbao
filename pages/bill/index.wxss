@@ -1,0 +1,124 @@
+/**index.wxss**/
+page{
+
+  height: 100%;
+  overflow: hidden;
+}
+#integral{
+  width: 94%;
+  padding: 0 3%;
+  background-color: #E1CA9E;
+  color: white;
+  font-size: 0.8em;
+}
+#integral text{
+  display: inline-block;
+  height: 82rpx;
+  line-height: 82rpx;
+}
+#out{
+   width: 94%;
+  padding: 0 3%;
+}
+
+#integral_nav{
+  margin-top: 8rpx;
+  overflow: hidden;
+}
+#integral_nav view{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  font-size: 0.9em;
+}
+#integral_nav text{
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #D1D1D1;
+  font-size: 28rpx;
+}
+#integral_nav text.click{
+  color: black;
+  border-bottom: 2px solid black;
+}
+.list{
+  padding: 19rpx 0;
+  font-size: 0.8em;
+  border-bottom: 1px solid #EFEFEF;
+  position: relative;
+  overflow: hidden;
+}
+.list>image{
+  float: left;
+  width:110rpx;
+  height: 110rpx;
+  border-radius: 10rpx;
+}
+.list>view{
+  float: left;
+  width: 570rpx;
+  margin-left: 30rpx;
+  overflow: hidden;
+  position: relative;
+}
+.list text{
+  display: inline-block;
+  width: 100%;
+  float: left;
+}
+.title{
+  font-weight: bold;
+  font-size: 26rpx;
+  height: 27rpx;
+  line-height: 27rpx;
+  margin-top: 5rpx;
+}
+.time{
+  font-size: 22rpx;
+  margin-top: 17rpx;
+  color: #767776;
+  height: 18rpx;
+  line-height: 18rpx;
+}
+.money_{
+  font-size: 22rpx;
+  margin-top: 17rpx;
+  color: #1D1D1D;
+  height: 22rpx;
+  line-height: 22rpx;
+}
+.min{
+  position: absolute;
+  right: 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  top: 40%;
+  text-align: right;
+}
+#integral>view{
+  float: right;
+  position: relative;
+}
+#integral image{
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  position: relative;
+  top: 0.05em;
+}
+scroll-view{
+  width: 710rpx;
+  padding: 0 20rpx;
+  height: 85%;
+}
+
+.empty{
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 7%;
+  color: rgb(175, 171, 171)
+}

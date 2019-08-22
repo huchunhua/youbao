@@ -1,0 +1,4 @@
+<layout>
+    <image src="{{datas.banner}}" bindtap="goYoutu"></image>
+</layout>
+  

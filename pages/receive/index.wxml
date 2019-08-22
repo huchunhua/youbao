@@ -1,0 +1,35 @@
+<layout id="layout">
+    <view id='address_city'>
+    <scroll-view id='nearby_nav' scroll-x='false'>
+        <block wx:for="{{lists}}" wx:key="{{index}}">
+            <view class='text_ {{click==index?"click":""}}' data-id="{{index}}" bindtap='click'>{{item}}
+                <text></text>
+            </view>
+        </block>
+    </scroll-view>
+</view>
+<view id='shop_out'>
+    <view id='shop' wx:for="{{total_}}" style='display:{{click==index?"block":"none"}}' wx:key="{{index}}">
+        <view wx:for='{{item}}' wx:key="{{item.id}}" class='shop'>
+            <image class='bg' src='{{item.state==0?"/image/bg_re_.png":"/image/bg_re.png"}}' mode='widthFix'></image>
+            <uView class='float_left' bindtap='go_shop' data-id="{{item.id}}">
+                <image src='{{item.image}}'></image>
+                <view class='left_content'>
+                    <text>{{item.title}}</text>
+                    <text>{{item.title2}}</text>
+                    <view>
+                        <text>￥</text>
+                        <text>{{item.price}}</text>
+                        <text>{{item.limit==0?"无门槛通用券":"满"+item.limit+"元可用"}}</text>
+                    </view>
+                </view>
+            </uView>
+            <uView class='float_right' data-id='{{item.id}}' bindtap='{{item.state==0?"":"get_rec"}}'>
+                <text class="receive_btn" style='{{item.state==0?"color:#A2A2A2":"color:white"}}'>{{item.state==0?"已领取":"立即领取"}}</text>
+            </uView>
+        </view>
+        <text style='display:{{item==""?"block":"none"}}' class='empty'>暂无优惠券</text>
+    </view>
+</view>
+</layout>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>

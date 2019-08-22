@@ -1,0 +1,164 @@
+
+modal-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99999;
+    opacity: 0;
+    outline: 0;
+    text-align: center;
+    -ms-transform: scale(1.185);
+    transform: scale(1.185);
+    backface-visibility: hidden;
+    perspective: 2000rpx;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.6s ease-in-out 0;
+    pointer-events: none;
+}
+
+modal-box::before {
+    content: "\200B";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+modal-box.show {
+    opacity: 1;
+    transition-duration: 0.3s;
+    -ms-transform: scale(1);
+    transform: scale(1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    pointer-events: auto;
+}
+
+dialog {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 680rpx;
+    max-width: 100%;
+    background: #f8f8f8;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+modal-box.bottom-modal::before {
+    vertical-align: bottom;
+}
+
+modal-box.bottom-modal dialog {
+    width: 100%;
+    border-radius: 0;
+}
+
+modal-box.bottom-modal {
+    margin-bottom: -1000rpx;
+}
+
+modal-box.bottom-modal.show {
+    margin-bottom: 0;
+}
+modal-box dialog {
+    width: 550rpx;
+    background: #fff;
+}
+.authorizeModal bar {
+    justify-content: flex-end;
+    background: unset;
+    display:flex;
+    position:relative;
+    align-items:center;
+    height:100rpx;
+    font-size:32rpx;
+}
+.authorizeModal bar:first-child{
+    position: absolute;
+    width: 100%;
+}
+.authorizeModal bar .authorizeModal-footer {
+    width:100%;
+    font-size:28rpx;
+    background: #FECE00;
+    color: #fff;
+    font-weight: bold;
+    margin: 0;
+    line-height: 100rpx;
+}
+.authorizeModal-action {
+    margin: 0;
+}
+.modal-action{
+    width: 46rpx;
+    height: 46rpx;
+    background: url("https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/first_login_modal/modal_close.png") center no-repeat;
+    background-size: 100%;
+    margin-right: 30rpx;
+}
+.authorizeModal form-group {
+    background:#fff url("https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/first_login_modal/icon_phone.png") left no-repeat;
+    padding:0 0 0 52rpx;
+    display:flex;
+    align-items:center;
+    min-height:100rpx;
+    justify-content:space-between;
+    background-size:36rpx;
+    margin:0 50rpx;
+}
+.authorizeModal form-group:last-child{
+    background-image: url("https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/first_login_modal/icon_seccode.png");
+}
+.authorizeModal form-group .title{
+    line-height:36rpx;
+    border-right:1px solid #ccc;
+    padding-right:20rpx;
+    margin-right:20rpx;
+    color: #ccc;
+}
+.authorizeModal form-group input{
+    text-align: left;
+    font-size: 26rpx;
+}
+.authorizeModal form-group + form-group {
+    border-top: 1px solid #eee !important;
+}
+.authorizeModal .modal-tips{
+    text-align:left;
+    padding:60rpx;
+}
+.modal-tips text {
+    display: block;
+}
+.modal-tips text:last-child{
+    line-height:1.5;
+    margin-top:20rpx;
+    font-size: 24rpx;
+}
+.authorizeModal .text-df {
+    font-size: 28rpx;
+}
+.authorizeModal .text-xxl {
+    font-size: 44rpx;
+}
+
+.authorizeModal .text-gray{
+    color: #aaa !important;
+}
+.authorizeModal button.radius{
+    border-radius: 6rpx !important;
+}
+.authorizeModal button.xs {
+    padding: 10rpx 25rpx;
+    background: #FECE00 !important;
+    color: #fff;
+    font-size: 24rpx;
+    height:46rpx;
+    line-height:1.2;
+    width:100rpx;
+    margin:0;
+}

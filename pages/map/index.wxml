@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<map style='display:{{foa_show?"none":"block"}}' id="myMap" bindmarkertap="markertap" markers="{{makers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="17" wx:if="true" />
+<cover-view id='detail' style='display:{{show?"block":"none"}}'>
+  <cover-image src='/image/close_.png' bindtap='close' id='close'></cover-image>
+  <cover-view id='name'>{{seller_name}}</cover-view>
+  <cover-view id='de_'>
+    <cover-view id='km'>距离{{distance}}公里</cover-view>
+    <cover-view id='pr_'></cover-view>
+    <cover-view id='address'>{{seller_address}}</cover-view>
+  </cover-view>
+  <cover-view id='phone' style='display:{{seller_phone==""||seller_phone=="null"?"none":"block"}}'>电话：{{seller_phone}}</cover-view>
+  <cover-view id='time'>营业时间：{{seller_time_start}}-{{seller_time_end}}</cover-view>
+  <cover-view id='num_'>
+    <cover-image wx:for="{{star}}" class='star' src='/image/star.png' wx:key="{{index}}"></cover-image>
+    <cover-view wx:for="{{seller_tag}}" class='num' wx:key="{{index}}">{{item.oil_name}}</cover-view>
+  </cover-view>
+  <cover-view id='detail_btn' bindtap='go_station'>查看详情</cover-view>
+  <cover-view id='navigation' bindtap='go_map'><cover-image id='navigation_img' src='/image/navigation.png'></cover-image>导航</cover-view>
+</cover-view>

@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<image src='/image/logo.png' mode='widthFix'></image>
+<input type='text' placeholder='请输入手机号'></input>
+<input type='password' placeholder='请输入登录密码'></input>
+<view id='forget'><text>忘记密码?</text></view>
+<button>登 录</button>
+<text id='remark'>新注册用户首次登录立即赠送20元油品抵扣券</text>

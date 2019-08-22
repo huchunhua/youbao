@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view id='title'>
+  Q：{{title}}
+</view>
+<view id='content'>
+  <rich-text nodes="{{content}}"></rich-text>
+</view>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>

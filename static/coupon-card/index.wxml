@@ -1,0 +1,21 @@
+<item class="coupon-card {{touch != 1 ? 'disable' : ''}}">
+    <view class="item-body">
+        <uView class="coupon-price" bindtap="onCouponDetail" data-id="{{couponInfo.id}}">
+            <text>￥</text><text>{{couponInfo.coupon_t_money}}</text>
+        </uView>
+        <uView class='content' bindtap="onCouponDetail" data-id="{{couponInfo.id}}">
+            <view class="coupon-title">
+                <text>{{couponInfo.coupon_t_title}}</text>
+            </view>
+            <view class='text-gray text-sm coupon-limit'>
+                满{{couponInfo.coupon_t_limit}}可用
+            </view>
+        </uView>
+    </view>
+    <view class="item-footer">
+        <text>有效期{{couponInfo.coupon_t_endtime}}前可用</text>
+        <button class='round sm' bindtap="onReceive" data-id="{{couponInfo.id}}" wx:if="{{touch == 1 && receive}}">免费领取</button>
+        <button class='round sm' wx:if="{{touch == 0}}">已经领取</button>
+        <button class='round sm' wx:if="{{touch == 2}}">已领取完</button>
+    </view>
+</item>

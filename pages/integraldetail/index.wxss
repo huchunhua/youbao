@@ -1,0 +1,115 @@
+/**index.wxss**/
+page{
+  width: 96%;
+  padding: 0 2%;
+  height: 100%;
+  overflow: hidden;
+}
+#integraldetail{
+  width: 720rpx;
+  height: 279.2rpx;
+
+  position: relative;
+}
+#bg{
+  width: 100%;
+}
+#title{
+  position: absolute;
+  top: 1.3em;
+  left: 8%;
+  color: white;
+  font-size: 30rpx;
+}
+#total{
+  position: absolute;
+  font-weight: bold;
+  font-size: 58rpx;
+  top: 1.8em;
+  left: 8%;
+  color: white;
+}
+#record{
+  color: white;
+  font-size: 24rpx;
+  position: absolute;
+  left: 8%;
+  bottom: 20%;
+}
+#record image{
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.1em;
+  right: 0.3em;
+}
+#right{
+  font-size: 0.8em;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  right: 8%;
+  top: 1.3em;
+}
+#integral_nav{
+  margin-top: 5%;
+  overflow: hidden;
+}
+#integral_nav view{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+  font-size: 0.8em;
+}
+#integral_nav text{
+  display: inline-block;
+  padding: 0.5em 0;
+  color: #D1D1D1;
+  font-size: 28rpx;
+}
+#integral_nav text.click{
+  color: black;
+  border-bottom: 2px solid black;
+}
+.list{
+  padding: 28rpx 0;
+  border-bottom: 1px solid #F4F4F4;
+  position: relative;
+}
+.title{
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.time{
+  font-size: 22rpx;
+  color: #8E8E8E;
+}
+.plus{
+  position: absolute;
+  right: 5%;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: red;
+  top: 30%;
+}
+.min{
+  position: absolute;
+  right: 5%;
+  font-size: 1.3em;
+  color: #8E8E8E;
+  top: 30%;
+}
+scroll-view{
+  height: 67%;
+}
+.empty{
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 7%;
+  color: rgb(175, 171, 171)
+}

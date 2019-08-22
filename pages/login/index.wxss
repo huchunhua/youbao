@@ -1,0 +1,21 @@
+image{
+  width: 750rpx;
+  height: 395rpx;
+}
+
+text{
+  margin-top:20rpx;
+  padding: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+button{
+  width:670rpx;
+  margin:auto;
+  margin-top:20rpx;
+  height:80rpx;
+  line-height:80rpx;
+  font-size:32rpx;
+  border-radius:8rpx;
+}

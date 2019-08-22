@@ -1,0 +1,26 @@
+<layout id="layout">
+    <image class="banner_shop" src="{{datas.banner}}"></image>
+    <ul class="sort_list">
+        <li class='{{order_type  == 1 ?"active":""}}' data-ordertype='1' bindtap='sort'>离我最近</li>
+        <li class='{{order_type  == 2 ?"active":""}}' data-ordertype='2' bindtap='sort'>销量优先</li>
+        <li class='{{order_type  == 3 ?"active":""}}' data-ordertype='3' bindtap='sort'>价格优先</li>
+    </ul>
+    <view class="shop_list">
+        <view class="shop_item cf" bindtap="jumpToShop" wx:for="{{datas.seller}}" wx:key="{{index}}" data-washcouponid="{{item.wash_coupon_tid}}">
+            <image class="shop_img fl" src="{{item.seller_logo}}"></image>
+            <view class="shop_name">
+                <p>{{item.seller_name}}</p>
+                <p class="fr price">{{item.coupon_t_price}}元</p>
+            </view>
+            <view class="shop_more">
+                <p>评价<span class="evaluate">{{item.seller_comment}}</span></p>
+                <p class="order_num">{{item.order_count}}单</p>
+            </view>
+            <view class="shop_addr cf">
+                <p>{{item.seller_address}}</p>
+                <p class="fr distance">{{item.seller_distance}}km</p>
+            </view>
+        </view>        
+    </view>
+</layout>
+  

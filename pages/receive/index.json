@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "领券中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

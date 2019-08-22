@@ -1,0 +1,41 @@
+
+    <map id="myMap" bindmarkertap="onMarkerTap" markers="{{markers}}"
+         longitude='{{longitude ? longitude : "104.065840" }}' latitude='{{latitude ? latitude : "30.657420"}}'
+         scale="13" subkey="QGABZ-IKD3O-WWDWO-SATYW-43THH-CRFJU" show-location="false" wx:if="true"/>
+
+    <cover-view id='detail' wx:if="{{showStationDetail}}">
+        <cover-view class='detail_close' bindtap='onCloseStation'>
+            <cover-image src='/image/close_.png'></cover-image>
+        </cover-view>
+        <cover-view class='detail_name'>
+            <cover-view>{{station_info.seller_name}}</cover-view>
+            <cover-view class="seller_gifting" wx:if="{{station_info.seller_isGift == 1}}">优惠中</cover-view>
+        </cover-view>
+        <cover-view class='detail_line'>
+            <cover-view>距离{{station_info.distance}}公里</cover-view>
+            <cover-view class='line'></cover-view>
+            <cover-view>{{station_info.seller_address}}</cover-view>
+        </cover-view>
+        <cover-view class='detail_line'>
+            <cover-view>营业时间：{{station_info.seller_time_start}}-{{station_info.seller_time_end}}</cover-view>
+            <cover-view class='line' wx:if="{{station_info.seller_phone}}"></cover-view>
+            <cover-view wx:if="{{station_info.seller_phone}}">电话：{{station_info.seller_phone}}</cover-view>
+        </cover-view>
+        <cover-view id='num_'>
+            <cover-image wx:for="{{station_info.seller_star}}" class='star' src='/image/star.png'
+                         wx:key="{{index}}"></cover-image>
+            <cover-view wx:for="{{station_info.seller_extand.list}}" wx:key="{{index}}" class='num'>
+                <cover-view>{{item.name}}</cover-view>
+                <cover-view>￥{{item.price}}</cover-view>
+            </cover-view>
+        </cover-view>
+        <cover-view class="detail_remark" wx:if="{{station_info.seller_extand.remark}}">
+            {{station_info.seller_extand.remark}}
+        </cover-view>
+        <cover-view id='detail_btn' bindtap='toStation'>查看详情</cover-view>
+        <cover-view id='navigation' bindtap='toLocation'>
+            <cover-image id='navigation_img' src='/image/navigation.png'></cover-image>
+            <cover-view id='navigation_'>导航</cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-image id='middle_' bindtap='mineLocation' src='/image/location.png'></cover-image>

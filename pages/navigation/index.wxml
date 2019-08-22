@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view id='address_city'>
+  <view id='city'>
+    <text>成都</text><image src='/image/add_more.png' mode='widthFix'></image>
+  </view>
+  <view id='search'>
+    <image src='/image/search.png' mode='widthFix'></image>
+    <input type='text' confirm-type='search' bindinput="edit" bindconfirm="search" placeholder='搜索加油站'></input>
+  </view>
+  <view id='city' bindtap='{{floa}}'>
+    <text>{{oil_name}}</text><image class='{{foa_show?"click":""}}' src='/image/add_more.png' mode='widthFix'></image>
+  </view>
+</view>
+<view id='out_' style='display:{{foa_show?"block":"none"}}' bindtap='hide'></view>
+<view id='oil_num' style='display:{{foa_show?"block":"none"}}'>
+  <block wx:for="{{num}}" wx:key="{{index}}">
+    <text class='oil_title'>{{item.title}}</text>
+    <view class='num_list'>
+      <text class='{{item.id==oil_id?"click":""}}' data-name="{{item.oil_name}}" bindtap='num_click' wx:for="{{item.children}}" wx:key="{{index}}" data-id="{{item.id}}">{{item.oil_name}}</text>
+    </view>
+  </block>
+</view>
+
+
+<map style='display:{{foa_show?"none":"block"}}' id="myMap" bindmarkertap="markertap" markers="{{makers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" wx:if="true" />
+
+<scroll-view id='oil_list' scroll-y='true'>
+  <block wx:for="{{seller_all}}" wx:key="{{index}}">
+    <view class='oil_list'>
+        <text class='title'>{{item.seller_name}}</text>
+        <text class='address'>{{item.seller_address}}</text>
+        <view class='oils'>
+          {{item.distance}}公里
+          <text wx:for="{{item.seller_tag}}" wx:key="{{index}}">{{item.oil_name}}</text>
+        </view>
+        <view class='go_detail' data-id="{{item.id}}" bindtap='go_detail'>详细 <image src='/image/more.png' mode='widthFix'></image></view>
+        <view class='navigation' bindtap='go_na' data-name="{{item.seller_name}}" data-longitude="{{item.seller_longitude}}"  data-latitude="{{item.seller_latitude}}"><image src='/image/navigation.png' mode='widthFix'></image>导航</view>
+      </view>
+  </block>
+</scroll-view>

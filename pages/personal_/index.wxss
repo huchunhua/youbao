@@ -1,0 +1,104 @@
+/**index.wxss**/
+@import "/icon.wxss";
+@import "/base-rpx.wxss";
+page{
+  width: 100%;
+  background-color: #f4f4f4;
+}
+.personal_de{
+  overflow: hidden;
+  position: relative;
+  margin-bottom:10rpx;
+  background-color: #fff;
+  text-align: center;
+}
+.personal_de>image,.personal_de>.avatar_image{
+  width: 141rpx!important;
+  height: 141rpx!important;
+  border-radius: 50%;
+  text-align: center;
+}
+.personal_de view{
+  margin:20rpx 0 30rpx;
+  font-size: 24rpx;
+  color:#6f6f6f;
+}
+.list{
+  padding: 36rpx 20rpx;
+  border-bottom: 1px solid #F4F4F4;
+  font-size: 0.9em;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+.list text{
+  float: left;
+  position: relative;
+  top: 0.3em;
+  font-size: 28rpx;
+  margin-right: 60rpx;
+}
+.picker{
+  font-size: 28rpx;
+}
+.list input{
+  float: left;
+  width: 70%;
+  padding: 0;
+  margin: 0;
+  min-height: auto;
+  font-size: 28rpx;
+}
+#add{
+  font-size: 26rpx;
+  background-color: #fece00!important;
+  color: #0e0e0e;
+  margin-top: 1em;
+  font-weight: bold;
+  width: calc(100% - 60rpx );
+  margin:40rpx 30rpx 0;
+  height: 81rpx;
+  line-height: 81rpx;
+}
+#add:active{
+  background-color: rgba(0, 0, 0, 0.7)
+}
+.list image{
+  position: absolute;
+  top: 50%;
+  width: 11rpx;
+  height: 18rpx;
+  margin-top: -9rpx;
+  right: 20rpx;
+}
+.list_ text{
+  top: 0;
+}
+.list picker{
+  float: left;
+  width: 65%;
+}
+.changeimgModal dialog{
+  position: absolute;
+  bottom: 20rpx;
+  left:15rpx;
+  width:calc(100% - 30rpx);
+  margin:0 auto;
+  background: none;
+}
+.changeimgModal dialog>view{
+  color:#3478f6;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  background-color: #fff;
+}
+.changewrap{
+  margin-bottom: 15rpx;
+}
+.changewrap view,.canclebtn{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.border_bottom{
+  border-bottom: 1px solid #F4F4F4;
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "汽车服务",
+  "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#FECE00",
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

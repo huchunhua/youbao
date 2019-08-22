@@ -1,0 +1,40 @@
+<layout id="layout">
+        <list class="menu no-padding">
+            <item class="goods-item">
+                <image class="goods-image radius" src="{{goodsInfo.goods_image}}"/>
+                <view class='content'>
+                    <view>{{goodsInfo.goods_name}}</view>
+                    <view class='text-gray goods-desc'>{{goodsInfo.goods_desc}}</view>
+                    <view class='text-yellow goods-price'>￥{{goodsInfo.goods_price}}</view>
+                </view>
+                <view class='action'>
+                    <view class="stepper">
+                        <image class="stepper-minus" bindtap='onReduce' src='/image/min.png'
+                               mode='widthFix'></image>
+                        <text class="stepper-wrapper">{{buyNum}}</text>
+                        <image class="stepper-plus" bindtap='onIncrease' src='/image/plus.png'
+                               mode='widthFix'></image>
+                    </view>
+                </view>
+            </item>
+        </list>
+        <list class="menu">
+            <item>
+                <view class='content'>
+                    <text class='text-gray text-sm'>合计</text>
+                </view>
+                <view class='action'>
+                    <text class='text-yellow text-sm'>￥{{totalAmount}}</text>
+                </view>
+            </item>
+        </list>
+        <view class="buy-button padding flex flex-direction">
+            <button class='bg-green' data-id="{{goodsInfo.id}}" bindtap="onWxPay" loading="{{isPaying == 'WxPay'}}">
+                微信支付
+            </button>
+            <button class='bg-blue margin-tb-sm' data-id="{{goodsInfo.id}}" bindtap="onBestPay"
+                    loading="{{isPaying == 'Best'}}">翼支付
+            </button>
+        </view>
+</layout>
+<loading fix size="large" wx:if="{{!pageLoaded}}">加载中</loading>

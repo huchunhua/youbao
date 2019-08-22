@@ -1,0 +1,39 @@
+/**app.wxss**/
+/*@import "icon.wxss";*/
+/*@import "base-rpx.wxss";*/
+page{
+  background-color: white;
+}
+view,text,input,button{
+  font-family: Arial
+}
+/* #nav{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  overflow: hidden;
+  padding: 0.3em 0;
+  border-top: 1px solid #F8F8F8;
+}
+#nav image{
+  width: 1em;
+  height: 1.1em;
+}
+#nav view{
+  float: left;
+  width: 33.3%;
+  text-align: center;
+}
+#nav text{
+  display: inline-block;
+  width: 100%;
+  font-size: 0.7em;
+  float: left;
+  font-weight: bolder;
+  color: #CACACA;
+}
+#nav .click text{
+  color: black;
+} */

@@ -1,0 +1,130 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  overflow: hidden;
+}
+#myMap{
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+#detail{
+  position: absolute;
+  z-index: 10;
+  width: 710rpx;
+  padding: 32rpx 20rpx;
+  height: 297rpx;
+  background-color: white;
+  bottom: 0;
+  box-shadow: 0 0 3rpx 3rpx rgb(233, 232, 232);
+}
+#close{
+  position: absolute;
+  top: 32rpx;
+  right: 40rpx;
+  width: 22rpx;
+  height: 23rpx;
+}
+#name{
+  position: absolute;
+  left: 21rpx;
+  top: 32rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+#de_{
+  position: absolute;
+  left: 20rpx;
+  top: 84rpx;
+  font-size: 24rpx;
+  overflow: hidden
+}
+#km{
+  float: left;
+  color: #6D6D6D;
+}
+#pr_{
+  width: 2rpx;
+  height: 17rpx;
+  float: left;
+  position: relative;
+  top: 7rpx;
+  background-color: #A4A4A4;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
+#address{
+  float: left;
+  color: #545454;
+}
+#phone{
+  position: absolute;
+  left: 20rpx;
+  top: 126rpx;
+  font-size: 24rpx;
+  color: #6D6D6D;
+}
+#time{
+  position: absolute;
+  left: 20rpx;
+  top: 167rpx;
+  font-size: 24rpx;
+  color: #6D6D6D;
+}
+#num_{
+  position: absolute;
+  left: 20rpx;
+  top: 206rpx;
+}
+.star{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 5rpx;
+  float: left;
+  margin-top: 7rpx;
+}
+.num{
+  float: left;
+  width: 51rpx;
+  height: 27rpx;
+  border: 2rpx solid #E0C9AE;
+  color: #E0C9AE;
+  line-height: 27rpx;
+  text-align: center;
+  border-radius: 2rpx;
+  margin-left: 8rpx;
+  font-size: 22rpx;
+}
+#detail_btn,#navigation{
+  position: absolute;
+  width: 341rpx;
+  height: 67rpx;
+  border-radius: 10rpx;
+  line-height: 67rpx;
+  text-align: center;
+  bottom: 32rpx;
+  font-size: 28rpx;
+}
+#detail_btn{
+  border: 1px solid #A4A4A4;
+  left: 20rpx;
+  color: #010101;
+}
+#navigation{
+  right: 20rpx;
+  background-color: #4D6BFF;
+  color: white;
+}
+#navigation_img{
+  display: inline-block;
+  width: 28rpx;
+  height: 29rpx;
+  margin-right: 15rpx;
+  position: relative;
+  top: 3rpx;
+}

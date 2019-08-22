@@ -1,0 +1,75 @@
+<!--index.wxml-->
+<view id='integral'>
+  <text>本月消费：￥{{total}}</text>
+  <view>
+    <picker mode="date" value="{{date}}" fields="month" end='{{end_time}}' bindchange="change">
+      <text>{{date}}</text>
+        <image src='/image/date.png' mode='widthFix'></image>
+    </picker>
+  </view>
+</view>
+
+<view id='out'>
+
+  <view id='integral_nav'>
+    <view bindtap='click' data-id="0"><text class='{{type==0?"click":""}}'>全部</text></view>
+    <view bindtap='click' data-id="1"><text class='{{type==1?"click":""}}'>油品</text></view>
+    <view bindtap='click' data-id="2"><text class='{{type==2?"click":""}}'>周边</text></view>
+  </view>
+
+  
+</view>
+
+<scroll-view scroll-y='true' style='display:{{type==0?"block":"none"}}'>
+    <block wx:for='{{list1}}' wx:key="{{index}}">
+      <view class='list' bindtap='go_detail' data-type="1" data-id="{{item.id}}">
+        <image src='{{item.logo}}' mode='widthFix'></image>
+        <view>
+          <text class='title'>{{item.store_name}}</text>
+          <text class='time'>{{item.payment_time}}</text>
+          <text class='money_'>金额：{{item.pay_amount}}元  优惠：{{item.discount_amount}}元</text>
+          <text class='min'>-{{item.order_amount}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:for='{{list2}}' wx:key="{{index}}">
+      <view class='list' bindtap='go_detail' data-type="2" data-id="{{item.id}}">
+        <image src='{{item.logo}}' mode='widthFix'></image>
+        <view>
+          <text class='title'>{{item.store_name}}</text>
+          <text class='time'>{{item.payment_time}}</text>
+          <text class='money_'>金额：{{item.pay_amount}}元  优惠：{{item.discount_amount}}元</text>
+          <text class='min'>-{{item.order_amount}}</text>
+        </view>
+      </view>
+    </block>
+    <text style='display:{{list1==""&&list2==""?"block":"none"}}' class='empty'>无记录</text>
+  </scroll-view>
+  <scroll-view scroll-y='true' style='display:{{type==1?"block":"none"}}'>
+    <block wx:for='{{list1}}' wx:key="{{index}}">
+      <view class='list' bindtap='go_detail' data-type="1" data-id="{{item.id}}">
+        <image src='{{item.logo}}' mode='widthFix'></image>
+        <view>
+          <text class='title'>{{item.store_name}}</text>
+          <text class='time'>{{item.payment_time}}</text>
+          <text class='money_'>金额：{{item.pay_amount}}元  优惠：{{item.discount_amount}}元</text>
+          <text class='min'>-{{item.order_amount}}</text>
+        </view>
+      </view>
+    </block>
+    <text style='display:{{list1==""?"block":"none"}}' class='empty'>无记录</text>
+  </scroll-view>
+  <scroll-view scroll-y='true' style='display:{{type==2?"block":"none"}}'>
+    <block wx:for='{{list2}}' wx:key="{{index}}">
+      <view class='list' bindtap='go_detail' data-type="2" data-id="{{item.id}}">
+        <image src='{{item.logo}}' mode='widthFix'></image>
+        <view>
+          <text class='title'>{{item.store_name}}</text>
+          <text class='time'>{{item.payment_time}}</text>
+          <text class='money_'>金额：{{item.pay_amount}}元  优惠：{{item.discount_amount}}元</text>
+          <text class='min'>-{{item.order_amount}}</text>
+        </view>
+      </view>
+    </block>
+    <text style='display:{{list2==""?"block":"none"}}' class='empty'>无记录</text>
+  </scroll-view>

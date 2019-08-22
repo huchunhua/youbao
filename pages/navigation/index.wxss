@@ -1,0 +1,181 @@
+/**index.wxss**/
+page{
+  height: 100%;
+  overflow: hidden;
+}
+#address_city{
+  width: 100%;
+  font-size: 0.8em;
+  overflow: hidden;
+  position: relative;
+  z-index: 101;
+  background-color: white;
+}
+#oil_num{
+  background-color: white;
+  position: relative;
+  z-index: 101;
+  width: 96%;
+  padding: 0.5em 2%;
+}
+.oil_title{
+  font-size: 0.8em;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0.8em 0 1em 0;
+}
+.num_list{
+  overflow: hidden;
+}
+.num_list text{
+  float: left;
+  width: 160rpx;
+  margin-right:17rpx;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #ECECEC;
+  font-size: 28rpx;
+  margin-bottom: 19rpx;
+  border-radius: 6rpx;
+}
+.num_list text:nth-child(4n){
+  margin-right: 0;
+}
+.num_list text.click{
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+#city{
+  width: 19%;
+  float: left;
+  padding: 0.5em 0;
+  text-align: center;
+}
+#city image{
+  width: 1em;
+  height: 1em;
+  margin-left: 0.3em;
+}
+#city image.click{
+  transform: rotate(180deg)
+}
+#search{
+  float: left;
+  width: 60%;
+  border: 1px solid #ECECEC;
+  border-radius: 0.3em;
+  padding: 0.3em 0;
+  overflow: hidden;
+}
+#search image{
+  width: 1em;
+  margin-right: 0.2em;
+  margin-left: 0.3em;
+  float: left;
+  position: relative;
+  top: 0.4em;
+}
+#search input{
+  width: 80%;
+  float: left;
+  height: auto;
+  padding: 0;
+  text-align: center;
+  min-height: none;
+}
+
+#myMap{
+  width: 100%;
+  position: absolute;
+  height: 50%;
+  top: 6.6%;
+  left: 0;
+  z-index: 10;
+}
+
+#oil_list{
+  position: fixed;
+  width: 96%;
+  padding: 1em 2%;
+  left: 0;
+  bottom:0;
+  height: 40%;
+  background-color: white;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  z-index: 99;
+  border-top: 1px solid rgb(219, 219, 219);
+}
+.oil_list{
+  position: relative;
+  margin-bottom: 5%;
+}
+.oil_list image{
+  width: 1em;
+  height: 1em;
+}
+.title,.address,.oils{
+  display: inline-block;
+  width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.title{
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.address{
+  font-size: 0.7em;
+}
+.oils{
+  font-size: 0.65em;
+  padding: 0.2em 0;
+}
+.oils text{
+  color: #DECB9E;
+  padding: 0 0.3em;
+  border: 1px solid #DECB9E;
+  margin-left: 0.4em;
+}
+.go_detail{
+  position: absolute;
+  right: 2%;
+  top: 0;
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.go_detail image{
+  width: 0.5em;
+  position: relative;
+  top: 0.05em;
+  margin-left: 0.3em;
+}
+.navigation{
+  position: absolute;
+  right: 2%;
+  bottom: 0.3em;
+  background-color: #4D6BFF;
+  color: white;
+  font-size: 0.8em;
+  padding: 0.3em 0.5em;
+  border-radius: 0.3em;
+}
+.navigation image{
+  width: 1em;
+  position: relative;
+  top: 0.1em;
+  margin-right: 0.3em;
+}
+
+#out_{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0000005e;
+  z-index: 100;
+}

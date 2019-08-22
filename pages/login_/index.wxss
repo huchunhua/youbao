@@ -1,0 +1,47 @@
+/**index.wxss**/
+page{
+  background-color: white;
+}
+image{
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+#forget,button,#remark{
+  width: 92%;
+  margin-left: 4%;
+}
+input{
+  width: 90%;
+  margin-left: 4%;
+  background-color: #F7F7F7;
+  margin-top: 1em;
+  font-size: 0.8em;
+  padding: 0.5em 0;
+  padding-left: 2%;
+}
+button{
+  background-color: black;
+  color: white;
+  font-size: 0.7em;
+  margin-top: 1em;
+}
+#forget,#remark{
+  color: #EADCC0;
+  font-size: 0.7em;
+}
+#forget{
+  text-align: right;
+  margin-top: 1em;
+}
+#forget text{
+  border-bottom: 1px solid #EADCC0;
+}
+#remark{
+  display: inline-block;
+  text-align: center;
+}
+button:active{
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}

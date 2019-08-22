@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view id='address_city'>
+  <view id='city'>
+    成都<image src='/image/add_more.png' mode='widthFix'></image>
+  </view>
+  <view id='search'>
+    <image src='/image/search.png' mode='widthFix'></image>
+    <input focus='true' bindinput='change' bindconfirm="search" type='text' confirm-type='search' placeholder='搜索店铺'></input>
+  </view>
+</view>
+<view id='shop'>
+  <block wx:for="{{shop}}" wx:key="{{index}}">
+          <view class='shop' data-id="{{item.id}}" bindtap='go_shop'>
+            <image src='{{item.seller_logo}}' mode='widthFix'></image>
+            <view class='shop_content'>
+              <text>{{item.seller_name}}</text>
+              <text class='distance'>{{item.distance}}km</text>
+              <view><image src='/image/service.png' mode='widthFix'></image> {{item.seller_tag}}</view>
+              <view>地址： {{item.seller_address}}</view>
+            </view>
+          </view>
+          
+  </block>
+  <text style='display:{{shop==""?"block":"none"}}' class='empty'>无记录</text>
+</view>

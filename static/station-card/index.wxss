@@ -1,0 +1,150 @@
+
+item.station-card {
+    position:relative;
+    line-height:36rpx;
+    font-size:32rpx;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100rpx;
+    height:unset !important;
+    display:block;
+    border:none;
+    padding: 30rpx;
+
+}
+item.station-card .item-body {
+    padding-left: 130rpx !important;
+    height: 120rpx !important;
+    display: flex;
+    width: 700rpx;
+}
+item.station-card .station-logo {
+    width: 110rpx;
+    height: 110rpx;
+    position:absolute;
+    left: 25rpx;
+    overflow: unset;
+}
+item.station-card .station-logo image {
+    width: 108rpx;
+    height: 108rpx;
+    border:1px solid #eee;
+}
+
+item.station-card .content {
+    line-height: 1.25em;
+    flex:1;
+}
+item.station-card .content .seller-oil {
+    display:inline-block;
+}
+item.station-card .content .seller-oil .oil-item{
+    float: left;
+}
+item.station-card .content .seller-oil tag.sm {
+    font-size:20rpx !important;
+    padding:6rpx 10rpx !important;
+}
+item.station-card .content .seller-address {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width: 570rpx;
+    line-height:36rpx;
+    height:32rpx;
+    font-size:22rpx;
+    margin:6rpx 0;
+
+}
+item.station-card .content .seller-address .seller-star {
+    height:32rpx;
+    padding:5rpx 10rpx 5rpx 0;
+    display:inline-block;
+    float:left;
+    border-right:1px solid #eee;
+    margin-right:10rpx;
+}
+item.station-card .content .seller-address .seller-star image{
+    width:22rpx;
+    height:22rpx;
+    margin-right:4rpx;
+    display:inline-block;
+    float:left;
+
+}
+item.station-card .content .seller-name {
+    display:block;
+    height:32rpx;
+    line-height:32rpx;
+
+}
+item.station-card .content .seller-name .station-name {
+    float: left;
+    line-height:32rpx;
+    font-size:28rpx;
+    font-weight:bold;
+}
+item.station-card .content .seller-extend{
+    /*display:inline-block;*/
+    height: 32rpx;
+    margin:8rpx 0;
+
+}
+item.station-card image.station-tag {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 10rpx;
+}
+item.station-card .action {
+    text-align:center;
+
+}
+item.station-card .action image.item-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+item.station-card .content .seller-service {
+    line-height:32rpx;
+}
+item.station-card .content .seller-service image.item-icon {
+    width: 28rpx;
+    height: 28rpx;
+    float: left;
+    margin-right:10rpx;
+}
+item.station-card .item-footer{
+    padding-left: 130rpx !important;
+    position: relative;
+    transition:height .5s;
+    height: 200rpx;
+    /*width: 100%;*/
+}
+item.station-card .item-footer.deploy {
+    height:50rpx !important;
+    overflow:hidden;
+}
+item.station-card .item-footer view text{
+    line-height: 32rpx;
+    font-size: 22rpx;
+}
+item.station-card .item-footer .foot-action{
+    position: absolute;
+    right: 0;
+    font-size: 26rpx;
+    height:46rpx;
+
+}
+item.station-card .item-footer .foot-item{
+    padding: 6rpx 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-right:40rpx;
+
+}
+item.station-card .item-footer .foot-item image.item-icon {
+    width: 56rpx;
+    height: 32rpx;
+    float: left;
+    margin-right: 10rpx;
+}

@@ -1,0 +1,61 @@
+<layout id="layout">
+<view id='personal_de' bindtap='personal_' class="nolmal" data-blind="{{bind}}">
+    <view class="member_avatar">
+        <open-data type="userAvatarUrl" wx:if="{{!avatar}}" class="avatar_img"></open-data>
+        <image src='{{avatar}}' mode='widthFix' wx:if="{{avatar}}"></image>
+    </view>
+    <view id='de_'>
+        <open-data id="nickname" type="userNickName" wx:if="{{!nickname}}"></open-data>
+        <text id='nickname' wx:if="{{nickname}}">{{nickname}}</text>
+        <text id='phone'>{{phone ? phone : '未绑定手机'}}</text>
+    </view>
+    <view id='personal_' catchtap='personal_' wx:if="{{data.member_level == 0}}" data-blind="{{bind}}" class="{{data.member_integral > 0 ? 'haveintegral' : ''}}">
+        <p class="icon_personal">
+            <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/icon_bemerber.png"></image>
+        </p>
+        <view>
+            <view>成为会员</view>
+            <view class="font_small">
+                完善信息 >
+            </view>
+        </view>
+    </view>
+    <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="btn_getinfo"></button>
+</view>
+<view id='tool'>
+    <text class="tool_header">我的工具</text>
+    <uView class="item" bindtap='ticket' data-coupontype='1'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/coupon.png' mode='widthFix'></image>
+        <text class="item_text">优惠券</text>
+    </uView>
+    <uView class="item" bindtap='cash' data-coupontype="2">
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/cashcoupon.png' mode='widthFix'></image>
+        <text class="item_text">代金券</text>
+    </uView>
+    <uView class="item" bindtap='bill'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/bill.png' mode='widthFix'></image>
+        <text class="item_text">消费账单</text>
+    </uView>
+    <uView class="item" bindtap='expect'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/integral.png' mode='widthFix'></image>
+        <text class="item_text">我的积分</text>
+    </uView>
+    <uView class="item" bindtap='expect'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/garage.png' mode='widthFix'></image>
+        <text class="item_text">我的车库</text>
+    </uView>
+    <uView class="item"  bindtap='call'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/shop.png' mode='widthFix'></image>
+        <text class="item_text">联系客服</text>
+    </uView>
+    <uView class="item" bindtap='help'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/about.png' mode='widthFix'></image>
+        <text class="item_text">帮助中心</text>
+    </uView>
+    <uView class="item" bindtap='share'>
+        <image class="item_image" src='https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/invitation.png' mode='widthFix'></image>
+        <text class="item_text">邀请有礼</text>
+    </uView>
+</view>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>
+</layout>

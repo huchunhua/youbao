@@ -1,0 +1,26 @@
+<image id='top' src='/image/station_detail.png' mode='widthFix'></image>
+<view id='out'>
+    <station-card stationInfo="{{station_info}}"></station-card>
+    <view class='detail' bindtap='toLocation' wx:if="{{station_info.seller_address}}">
+        <image src='/assets/images/station_address.png'></image>
+        <text>{{station_info.seller_address}}</text>
+    </view>
+    <view class='detail' wx:if="{{station_info.seller_phone}}">
+        <image src='/assets/images/station_phone.png'></image>
+        <text>{{station_info.seller_phone}}</text>
+    </view>
+    <view class='detail' wx:if="{{station_info.seller_oil.remark}}">
+        <image src='/assets/images/station_gift.png'></image>
+        <text style="color:#FAB07A">{{station_info.seller_oil.remark}}</text>
+    </view>
+</view>
+<view class="coupon-list" wx:if="{{station_info.seller_coupon.length > 0}}">
+    <coupon-card wx:for="{{station_info.seller_coupon}}" wx:key="{{index}}" couponInfo="{{item}}" touch="{{item.canReceive}}"></coupon-card>
+</view>
+<view class="station_intro" wx:if="{{station_info.seller_intro}}">
+    <rich-text nodes="{{station_info.seller_intro}}"></rich-text>
+</view>
+<view id='fixed'>
+    <button bindtap='toLocation' style='width:710rpx'>导 航</button>
+</view>
+<loading fix size="large" wx:if="{{!pageLoaded}}">加载中</loading>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "代金券详情",
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

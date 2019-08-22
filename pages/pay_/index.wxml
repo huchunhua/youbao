@@ -1,0 +1,207 @@
+<layout id="layout">
+<form bindsubmit="formSubmit_collect" report-submit="true">
+    <view class="order_info" wx:if="{{!showLogin}}">
+        <view class='shop'>
+            <block wx:for="{{list}}" wx:key="{{index}}">
+                <view class='shop_content'>
+                    <text class='title'>{{item.goods_name}}</text>
+                    <text class='money'>￥{{item.goods_total}}</text>
+                    <text class='number'>{{item.goods_num}}</text>
+                </view>
+            </block>
+            <view class='deduction' wx:if="{{coupon_list.length > 0}}">
+                <text>油品优惠券</text>
+                <view class='more' bindtap="show" wx:if="{{isFirstByDay}}">
+                    <text style="color:#DA5E5E">{{de_money == 0 ? "您有"+coupon_oil_count+"张油品券" : "优惠" + de_money+"元"}}
+                    </text>
+                    <image src='/image/more.png'></image>
+                </view>
+                <view class='more' wx:if="{{!isFirstByDay}}">
+                    <text style="color:gray">每天只能使用一次加油优惠</text>
+                </view>
+            </view>
+        </view>
+        <view class='shop'>
+            <block wx:for="{{list1}}" wx:key="{{index}}">
+                <view class='shop_content'>
+                    <text class='title'>{{item.goods_name}}</text>
+                    <text class='money'>￥{{item.goods_total}}</text>
+                    <text class='number'>{{item.goods_num}}</text>
+                </view>
+            </block>
+            <view class='deduction' wx:if="{{coupon_list1.length > 0}}">
+                <text>非油优惠券</text>
+                <view class='more' bindtap='show1'>
+                    <text style="color:#DA5E5E">{{de_money1 == 0 ? "您有"+coupon_non_count+"张非油券" : "优惠" + de_money1 +
+                        "元"}}
+                    </text>
+                    <image src='/image/more.png'></image>
+                </view>
+            </view>
+        </view>
+        <view class='deduction' style='margin-bottom:0' wx:if="{{coupon_list2.length > 0}}">
+            <text>通用优惠券</text>
+            <view class='more' bindtap='show2'>
+                <text style="color:#DA5E5E">{{de_money2 == 0 ? "您有"+coupon_full_count+"张通用券" : "优惠" + de_money2 + "元"}}
+                </text>
+                <image src='/image/more.png'></image>
+            </view>
+        </view>
+        <view id='money'>
+            <view>
+                小计
+                <text>￥{{total_money}}</text>
+            </view>
+            <view style='display:{{coupon_list==""?"none":"block"}}'>
+                油品优惠
+                <text class='pl'>￥{{de_money}}</text>
+            </view>
+            <view style='display:{{coupon_list1==""?"none":"block"}}'>
+                非油品优惠
+                <text class='pl'>￥{{de_money1}}</text>
+            </view>
+            <view style='display:{{coupon_list2==""?"none":"block"}}'>
+                抵用券
+                <text class='pl'>￥{{de_money2}}</text>
+            </view>
+            <view>
+                实付金额
+                <text class='total'>￥{{pay_money<0?'0':pay_money}}</text>
+            </view>
+        </view>
+        <view class="pay_tips" wx:if="{{isDisabled}}">
+            <text class="text-yellow">订单已过期或支付超时，请重新扫码进行支付！</text>
+        </view>
+        <view class="pay_tips" wx:if="{{!isDisabled && countDown}}">
+            <text class="text-green">请在{{countDown}}内进行支付，超时后需重新扫码！</text>
+        </view>
+        <view class='button_all'>
+            <button class='wei' bindtap='w_pay' wx:if="{{pay_money > 0}}" loading="{{isPayIng}}" disabled="{{isPayIng || isDisabled}}">微信支付</button>
+            <button bindtap='y_pay' wx:if="{{pay_money > 0}}" loading="{{isPayIng}}" disabled="{{isPayIng || isDisabled}}">翼支付</button>
+            <button formType="submit" bindtap='go_pay' wx:if="{{pay_money <= 0}}">确认付款</button>
+            <button formType="submit" class='order_cancel' bindtap='orderCancel' wx:if="{{!isDisabled}}">取消付款</button>
+        </view>
+
+
+        <view id='fixed' bindtap='close' style='display:{{show||show_||show1||show2?"block":"none"}}'></view>
+        <view id='coupon' style='display:{{show?"block":"none"}}'>
+            <view id='title'> 选择油品券
+                <image bindtap='close' src='/image/close.png'></image>
+            </view>
+            <scroll-view scroll-y='true' id='coupon_out'>
+                <block wx:for="{{coupon_list}}" wx:key="{{index}}">
+                    <view class='coupon' bindtap='click_' data-checked='{{index}}' data-money="{{item.coupon_money}}"
+                          data-id='{{item.id}}'>
+                        <view class='image_'>
+                            <image src='{{item.coupon_state=="可使用"?"/image/coupon1.png":"/image/coupon_.png"}}'></image>
+                            <view>
+                                <text>￥</text>
+                                {{item.coupon_money}}
+                            </view>
+                        </view>
+                        <view class='content'>
+                            <text>{{item.coupon_title}}</text>
+                            <text class='de_'>有效期:{{item.coupon_starttime}}至{{item.coupon_endtime}}</text>
+                            <text class='de_'>{{item.coupon_limit=="0.00"?"无门槛通用":"油品消费满"+item.coupon_limit+"元可使用"}}
+                            </text>
+                            <text class='de'>{{item.coupon_state}}</text>
+                        </view>
+                        <image class='checked' style='{{checked==index?"display:block":"display:none"}}'
+                               src='/image/checked.png'></image>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <view id='coupon' style='display:{{show1?"block":"none"}}'>
+            <view id='title'> 选择非油券
+                <image bindtap='close' src='/image/close.png'></image>
+            </view>
+            <scroll-view scroll-y='true' id='coupon_out'>
+                <block wx:for="{{coupon_list1}}" wx:key="{{index}}">
+                    <view class='coupon' bindtap='click_1' data-checked='{{index}}' data-money="{{item.coupon_money}}"
+                          data-id='{{item.id}}'>
+                        <view class='image_'>
+                            <image src='{{item.coupon_state=="可使用"?"/image/coupon1.png":"/image/coupon_.png"}}'></image>
+                            <view>
+                                <text>￥</text>
+                                {{item.coupon_money}}
+                            </view>
+                        </view>
+                        <view class='content'>
+                            <text>{{item.coupon_title}}</text>
+                            <text class='de_'>有效期:{{item.coupon_starttime}}至{{item.coupon_endtime}}</text>
+                            <text class='de_' wx:if="{{!item.coupon_bindsku}}">
+                                {{item.coupon_limit=="0.00"?"无门槛通用":"非油消费满"+item.coupon_limit+"元可使用"}}
+                            </text>
+                            <text class='de_' wx:if="{{item.coupon_bindsku}}">
+                                仅用于{{item.coupon_bindsku}}
+                            </text>
+                            <text class='de'>{{item.coupon_state}}</text>
+                        </view>
+                        <image class='checked' style='{{checked1==index?"display:block":"display:none"}}'
+                               src='/image/checked.png'></image>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <view id='coupon' style='display:{{show2?"block":"none"}}'>
+            <view id='title'> 选择优惠券
+                <image bindtap='close' src='/image/close.png'></image>
+            </view>
+            <scroll-view scroll-y='true' id='coupon_out'>
+                <block wx:for="{{coupon_list2}}" wx:key="{{index}}">
+                    <view class='coupon' bindtap='click_2' data-checked='{{index}}' data-money="{{item.coupon_money}}"
+                          data-id='{{item.id}}'>
+                        <view class='image_'>
+                            <image src='{{item.coupon_state=="可使用"?"/image/coupon1.png":"/image/coupon_.png"}}'></image>
+                            <view>
+                                <text>￥</text>
+                                {{item.coupon_money}}
+                            </view>
+                        </view>
+                        <view class='content'>
+                            <text>{{item.coupon_title}}</text>
+                            <text class='de_'>有效期:{{item.coupon_starttime}}至{{item.coupon_endtime}}</text>
+                            <text class='de_'>{{item.coupon_limit=="0.00"?"无门槛通用":"油站消费满"+item.coupon_limit+"元可使用"}}
+                            </text>
+                            <text class='de'>{{item.coupon_state}}</text>
+                        </view>
+                        <image class='checked' style='{{checked2==index?"display:block":"display:none"}}'
+                               src='/image/checked.png'></image>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+        <view id='fixed_' style='display:{{show_?"block":"none"}}'>
+            <image src='/image/four.png' id='bg_' mode='widthFix'></image>
+            <view id='view_in'>
+                <view class='list_in' wx:for='{{first_list}}' wx:key="{{index}}">
+                    <image src='/image/three.png' mode='widthFix'></image>
+                    <text class='list_in_ list_in_1'>￥</text>
+                    <text class='list_in_ list_in_2'>{{item.coupon_t_money}}</text>
+                    <text class='list_in_ list_in_3'>{{item.coupon_t_title}}</text>
+                    <text class='list_in_ list_in_4'>{{item.coupon_t_limit==0?"无门槛通用券":"满"+item.coupon_t_limit+"元可用"}}
+                    </text>
+                    <text class='list_in_ list_in_5' data-id='{{item.id}}' bindtap='get'>立即领取</text>
+                    <text class='list_in_ list_in_6'>有效期:{{item.coupon_t_starttime}} 至 {{item.coupon_t_endtime}}</text>
+                </view>
+            </view>
+            <image id='list_closed' bindtap='list_closed' src='/image/closed.png' mode='widthFix'></image>
+        </view>
+    </view>
+    <i-spin fix size="large" wx:if="{{!pageLoaded && !showLogin}}">加载中</i-spin>
+    <view class="login_panel" wx:if="{{showLogin}}">
+        <image src='/image/grant.png' mode='widthFix'></image>
+        <text>*我们需要您的授权，以关联您的优宝账号</text>
+        <button formType="submit" type="primary" open-type="getUserInfo" bindgetuserinfo="onLogin">授权登录并付款</button>
+    </view>
+</form>
+</layout>
+<view id="firstLoginModal" wx:if="{{showFirstModal}}">
+    <view class="modal-container ">
+        <text class="modal-action icon-roundclose" bindtap="onModalClose"></text>
+    </view>
+    <view class="modal-footer">
+        <button class="modal-receive" bindtap="{{_isBind ? 'onClickReceive' : ''}}" open-type="{{!_isBind ? 'getPhoneNumber' : ''}}" bindgetphonenumber="{{!_isBind ? 'getPhoneNumber' : ''}}">立即领取</button>
+    </view>
+</view>

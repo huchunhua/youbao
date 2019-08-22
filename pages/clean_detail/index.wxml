@@ -1,0 +1,49 @@
+<layout id="layout">
+    <image class="banner_bg" src="{{sellerInfo.seller_logo}}"></image>
+    <view class="content">
+        <view class="cf border_bottom padding30">
+            <image class="fl shop_img" src="{{sellerInfo.seller_logo}}"></image>
+            <view class="shop_name">{{sellerInfo.seller_name}}</view>
+            <view class="distance font_grey">
+                <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil_clean/icon_distance.png" class="icon_distance"></image>
+                距离您{{sellerInfo.distance}}km
+            </view>
+        </view>
+        <view class="border_bottom padding30 cf font_grey address_wrap" bindtap="onLocation">
+            <view class="address">地址：{{sellerInfo.seller_address}}</view>
+            <view class="icon_wrap">
+                <view class="icon_navigation"></view>
+            </view>
+        </view>        
+        <view class="border_bottom padding30 cf font_grey" bindtap="call">
+            电话：{{sellerInfo.seller_phone}}
+            <view class="icon icon_phone fr"></view>
+        </view>
+    </view>
+
+    <view class="coupon">
+        <view class="fontthick">代金券使用说明</view>
+        <view>
+            <p class="fontthick">有效时间：</p>{{tplInfo.coupon_t_starttime}}至{{tplInfo.coupon_t_endtime}}
+        </view>        
+        <view>
+            <p class="fontthick">营业时间：</p>{{sellerInfo.seller_time_start}}-{{sellerInfo.seller_time_end}}
+        </view>        
+        <view>
+            <p class="fontthick">使用范围：</p>{{tplInfo.coupon_t_jingle}}
+        </view>        
+        <view class="flex">
+            <p class="fontthick desc_tit">使用说明：</p>
+            <rich-text nodes="{{tplInfo.coupon_t_desc}}" class="flex-sub"></rich-text>
+        </view>        
+        <view class="flex tips">
+            <p class="fontthick desc_tit">温馨提示：</p>
+            <view class="flex-sub">为了减少您排队等候的时间，请在高峰期提前2小时电话预约确认洗车时间</view>
+        </view>
+
+    </view>
+    <view class="btn_buy" bindtap="onBuy">
+        立即购买￥{{tplInfo.coupon_t_money}}
+    </view>
+</layout>
+  

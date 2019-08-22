@@ -1,0 +1,133 @@
+
+item.seller-item {
+    position:relative;
+    line-height:36rpx;
+    font-size:32rpx;
+    justify-content:space-between;
+    align-items:center;
+    min-height:100rpx;
+    height:unset !important;
+    display:block;
+    border:none;
+    padding: 30rpx;
+
+}
+item.seller-item .item-body {
+    padding-left: 130rpx !important;
+    height: 120rpx !important;
+    display: flex;
+    width: 700rpx;
+}
+item.seller-item .station-logo {
+    width: 110rpx;
+    height: 110rpx;
+    position:absolute;
+    left: 25rpx;
+    overflow: unset;
+}
+item.seller-item .station-logo image {
+    width: 108rpx;
+    height: 108rpx;
+    border:1px solid #eee;
+}
+
+item.seller-item .content {
+    line-height: 1.25em;
+    flex:1;
+}
+item.seller-item .content .seller-oil {
+    display:inline-block;
+}
+item.seller-item .content .seller-oil tag.sm {
+    font-size:20rpx !important;
+    padding:6rpx 10rpx !important;
+    border-radius: 8rpx !important;
+    float:left;
+
+
+}
+item.seller-item .content .seller-address {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    max-width: 490rpx;
+    display:table-cell;
+    vertical-align:bottom;
+}
+item.seller-item .content .seller-name {
+    display:block;
+    height:32rpx;
+    line-height:32rpx;
+
+}
+item.seller-item .content .seller-name .station-name {
+    float: left;
+    line-height:32rpx;
+    font-size:28rpx;
+    font-weight:bold;
+}
+item.seller-item .content .seller-extend{
+    /*display:inline-block;*/
+    height: 32rpx;
+    margin:8rpx 0;
+
+}
+item.seller-item image.station-tag {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 10rpx;
+}
+item.seller-item .action {
+    text-align:center;
+
+}
+item.seller-item .action image.item-icon {
+    width: 40rpx;
+    height: 40rpx;
+}
+item.seller-item .content .seller-service {
+    line-height:32rpx;
+    padding:6rpx 0;
+}
+item.seller-item .content .seller-service image.item-icon {
+    width: 28rpx;
+    height: 28rpx;
+    float: left;
+    margin-right:10rpx;
+}
+item.seller-item .item-footer{
+    padding-left: 130rpx !important;
+    position: relative;
+    transition:height .5s;
+    height: 200rpx;
+    /*width: 100%;*/
+}
+item.seller-item .item-footer.deploy {
+    height:50rpx !important;
+    overflow:hidden;
+}
+item.seller-item .item-footer view text{
+    line-height: 32rpx;
+    font-size: 22rpx;
+}
+item.seller-item .item-footer .foot-action{
+    position: absolute;
+    right: 0;
+    font-size: 26rpx;
+    height:46rpx;
+
+}
+item.seller-item .item-footer .foot-item{
+    padding: 6rpx 0;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-right:40rpx;
+
+}
+item.seller-item .item-footer .foot-item image.item-icon {
+    width: 56rpx;
+    height: 32rpx;
+    float: left;
+    margin-right: 10rpx;
+}

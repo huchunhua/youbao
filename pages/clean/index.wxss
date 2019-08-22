@@ -1,0 +1,149 @@
+@import "/icon.wxss";
+@import "/base-rpx.wxss";
+page{
+  background-color: #fff;
+}
+.tab_wrap{
+  display: flex;
+}
+.tab_wrap .tab_item{
+  width: 33.3%;
+  height: 80rpx;
+  line-height:  80rpx;
+  background-color: #FECE00;
+  color:#fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+.tab_wrap .tab_item.active{
+  color: #000000;
+}
+.tab_wrap .tab_item.active .span{
+  margin:-2rpx auto 0;
+  width: 60rpx;
+  height:2rpx;
+  background-color: #000000;
+}
+.show{
+  display: inline-block;
+}
+.hidden{
+  display: none;
+}
+.serve_block{
+  margin:0 30rpx;
+  width: calc(100% - 60rpx);
+}
+.serve_block .bg_img{
+  width: 100%;
+  height: 230rpx;
+  background-size: cover;
+}
+.serve_block .bg_img image{
+  width: 100%;
+  height: 100%;
+}
+.serve_block:nth-child(2) .min_price{
+  left: auto;
+  right: 140rpx;
+}
+.serve_content{
+  margin-bottom:20rpx;
+  height: 0;
+  overflow: hidden;
+  transition: height 2s;
+}
+.serve_content.isOpen{
+  height: auto;
+}
+.serve_tit{
+  margin:30rpx 0 20rpx;
+  padding-left: 15rpx;
+  border-left: 4rpx solid #fece00;
+  font-size: 26rpx;
+  color:#fece00;
+}
+.serve_item .itemstyle{
+  display: inline-block;
+  margin-right: 10rpx;
+  font-size: 36rpx;
+  color: #fece00;
+}
+.serve_item .item{
+  margin-bottom: 20rpx;
+  width: 33%;
+  font-size: 24rpx;
+  color:#666666;
+}
+.serve_type{
+  padding:40rpx 0;
+  border-bottom: 1px solid #F4F4F4;
+  font-size: 28rpx;
+  font-weight: 700;
+  color:#0e0e0e;
+}
+.serve_type image{
+  float:right;
+  width: 10rpx;
+  height: 20rpx;
+}
+
+#fixed{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+#fixed_{
+  position: fixed;
+  width: 100%;
+  top: 8%;
+  border-radius: 10rpx;
+  z-index: 110;
+  text-align: center;
+}
+#bg_{
+  display: block;
+  width: 693rpx;
+  margin:0 auto;
+}
+#list_closed{
+  width: 56rpx;
+  bottom:-70rpx;
+}
+/*美容*/
+.banner_shop{
+  display: inline-block;
+  width: calc(100% - 40rpx);
+  height: 300rpx;
+  margin: 40rpx 20rpx;
+}
+#tool .item{
+  text-align: center;
+  float: left;
+  width: 25%;
+  font-size: 0.8em;
+  overflow: hidden;
+  margin-top: 50rpx;
+}
+#tool .item .item_image{
+  height: 60rpx!important;
+  width: 60rpx;
+}
+#tool .tool_header{
+  display: inline-block;
+  width: 100%;
+  font-size: 30rpx;
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+#tool .item .item_text{
+  display: inline-block;
+  width: 100%;
+  font-weight: normal;
+  font-size: 26rpx;
+  margin: 0.3em 0;
+}

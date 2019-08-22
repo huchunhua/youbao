@@ -1,0 +1,204 @@
+/**index.wxss**/
+page{
+  width: 750rpx;
+  background-color: #f4f4f4;
+}
+#address_city{
+  font-size: 0.8em;
+  overflow: hidden;
+  background-color: white;
+  width: 750rpx;
+  z-index: 1000;
+}
+#city{
+  width: 19%;
+  float: left;
+  padding: 0.5em 0;
+  text-align: center;
+}
+#city image{
+  width: 1em;
+  height: 1em;
+  margin-left: 0.3em;
+}
+#search{
+  float: right;
+  width: 80%;
+  border: 1px solid #ececec;
+  border-radius: 0.3em;
+  padding: 0.5em 0;
+  overflow: hidden;
+  text-align: center;
+  color: #AFAEB2;
+}
+#search image{
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.1em;
+  margin-right: 0.5em;
+}
+#shop_out{
+  margin-top: 20rpx;
+  padding: 0 20rpx;
+  left: 0;
+  position: relative;
+  z-index: 1;
+}
+.shop{
+  position: relative
+}
+.bg{
+  width: 100%;
+}
+.float_left{
+  position: absolute;
+  width: 500rpx;
+  height: 200rpx;
+  left: 0;
+  top: 0;
+}
+.float_left image{
+  width:150rpx;
+  height:150rpx;
+  float:left;
+  border:1rpx solid #F4F4F4;
+  border-radius:10rpx;
+  margin-top:25rpx;
+  margin-left:30rpx;
+  margin-right:17rpx;
+}
+.left_content{
+  float: left;
+  width: 288rpx;
+  overflow: hidden;
+  margin-top: 10rpx;
+}
+.left_content>text{
+  display: inline-block;
+  width: 100%;
+  font-size: 28rpx;
+  margin-bottom: 11rpx;
+  margin-top: 26rpx;
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.left_content>text:first-child+text{
+  font-size: 20rpx;
+  color: #CACACA;
+  margin-top: 0;
+}
+.left_content view text:first-child,.left_content view text:first-child+text{
+  color: #f86060;
+}
+.left_content view text:first-child{
+  font-size: 31rpx
+}
+.left_content view text:first-child+text{
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.left_content view text:last-child{
+  font-size: 22rpx;
+  color: #7E7E7E;
+  margin-left: 10rpx;
+}
+.float_right {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  width: 140rpx;
+  text-align: center;
+  line-height: 170rpx;
+}
+.float_right .receive_btn{
+  font-size: 28rpx;
+}
+.cir{
+  margin-left: 22rpx;
+}
+.cc{
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 29rpx;
+  font-size: 18rpx;
+  color: #f85f61;
+  overflow: hidden;
+}
+.cc text{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+.float_right>text{
+  display: inline-block;
+  font-size: 30rpx;
+  width: 131rpx;
+  text-align: center;
+}
+#nearby_nav{
+  border-bottom: 1px solid #F8F8F8;
+  white-space: nowrap;
+  background-color: white;
+  width: 100%;
+  float: left;
+}
+.text_{
+  display: inline-block;
+  padding: 27rpx 0;
+  margin: 0 33rpx;
+  font-size: 28rpx;
+  position: relative;
+  color: #CAC9C9;
+  font-weight: bold;
+}
+.text_.click{
+color: black;
+}
+.text_.click text{
+  position:absolute;
+  width:80%;
+  left:10%;
+  bottom:0;
+  border-bottom:3px solid black;
+}
+.empty{
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-align: center;
+  color: rgb(175, 171, 171);
+  padding:200rpx 0;
+
+}
+#fixed_{
+  background-color: rgba(0, 0, 0, 0.438);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 10000000
+}
+#models{
+  position: fixed;
+  width: 710rpx;
+  padding: 0 20rpx;
+  background-color: white;
+  z-index: 10000001;
+  top: 0;
+  left: 0;
+}
+#models cover-view{
+  float: left;
+  border: 1px solid #f4f4f4;
+  margin-right: 16rpx;
+  font-size: 28rpx;
+}
+#imgs image{
+  width: 750rpx;
+  height: 180rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择车型",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

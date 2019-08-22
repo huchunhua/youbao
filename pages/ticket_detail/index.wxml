@@ -1,0 +1,75 @@
+<view class="coupon_codearea"
+      wx:if="{{coupon_info.coupon_state == 1 && coupon_info.coupon_is_used == 0 && verify_state == 0}}">
+    <image class="coupon_barcode" wx:if="{{qrcode_info.coupon_barcode}}" src='{{qrcode_info.coupon_barcode}}'
+           mode='widthFix'></image>
+    <text class="coupon_codetext" wx:if="{{coupon_info.coupon_state == 1}}">{{coupon_info.coupon_code}}</text>
+    <image class="coupon_qrcode" wx:if="{{coupon_info.coupon_state == 1 && coupon_info.coupon_is_used == 0}}"
+           src='{{qrcode_info.coupon_qrcode}}'></image>
+    <text class='coupon_tips_normal' wx:if="{{coupon_info.coupon_state == 1 && coupon_info.coupon_is_used == 0}}">
+        使用时出示二维码
+    </text>
+</view>
+<view class="coupon_warning" wx:if="{{verify_state == 0}}">
+    <image wx:if="{{coupon_info.coupon_state == 3}}" src='/image/coupon_expire.png'></image>
+    <image wx:if="{{coupon_info.coupon_is_used == 1}}" src='/image/coupon_used.png'></image>
+    <text wx:if="{{coupon_info.coupon_is_used == 1}}">该卡券已使用</text>
+    <text wx:if="{{coupon_info.coupon_state == 3}}">该卡券已过期</text>
+</view>
+<view class="content">
+    <view class="cf border_bottom padding30">
+        <image class="fl shop_img" src="{{seller_info.seller_logo}}"></image>
+        <view class="shop_name">{{seller_info.seller_name}}</view>
+        <view class="distance font_grey">
+            <image src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil_clean/icon_distance.png" class="icon_distance"></image>
+            距离您{{seller_info.distance}}km
+        </view>
+    </view>
+    <view class="border_bottom padding30 cf font_grey address_wrap" bindtap="onLocation">
+        <view class="address">地址：{{seller_info.seller_address}}</view>
+        <view class="icon_wrap">
+            <view class="icon_navigation"></view>
+        </view>
+    </view>        
+    <view class="border_bottom padding30 cf font_grey" bindtap="call">
+        电话：{{seller_info.seller_phone}}
+        <view class="icon icon_phone fr"></view>
+    </view>
+</view>
+<view class="coupon_verify" wx:if="{{verify_state == 1}}">
+    <image src='/image/coupon_verifyed.png'></image>
+    <text class='coupon_tips_verifyed'>优惠券核销成功</text>
+</view>
+<view class='coupon'>
+    <view class='money'>
+        <text class="fix">￥</text>
+        <text>{{coupon_info.coupon_money}}</text>
+    </view>
+    <view class='info'>
+        <view class='coupon_title'>{{coupon_info.coupon_title}}</view>
+        <view class='coupon_jingle'>
+            <text>{{coupon_info.coupon_limit=="0.00"?"无门槛通用":"满"+coupon_info.coupon_limit+"元可使用"}}</text>
+        </view>
+        <view class='coupon_time'>{{coupon_info.coupon_jingle}}</view>
+    </view>
+</view>
+<view class='table'>
+    <text class="table-title">卡券使用说明</text>
+    <view class='list'>
+        <text>有效时间：</text>
+        <text>{{coupon_info.coupon_starttime}} 至 {{coupon_info.coupon_endtime}}(周末、节假日通用)</text>
+    </view>
+    <view class='list'>
+        <text>营业时间：</text>
+        <text style='margin-top:5rpx;'>{{seller_info.seller_time_start}} - {{seller_info.seller_time_end}}</text>
+    </view>
+    <view class='list' style='display:{{coupon_info.coupon_jingle ? "block" : "none"}}'>
+        <text>使用范围：</text>
+        <text>{{coupon_info.coupon_jingle}}</text>
+    </view>
+    <view class='list' style='display:{{coupon_info.coupon_desc ? "block" : "none" }}'>
+        <text>使用说明：</text>
+        <rich-text nodes="{{coupon_info.coupon_desc}}"></rich-text>
+    </view>
+</view>
+<i-spin fix size="large" wx:if="{{!pageLoaded}}">加载中</i-spin>
+

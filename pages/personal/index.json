@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "enablePullDownRefresh": false,
+   "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#FECE00",
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

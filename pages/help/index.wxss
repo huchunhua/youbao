@@ -1,0 +1,26 @@
+/**index.wxss**/
+page{
+  width: 710rpx;
+  padding: 0 20rpx;
+}
+.list{
+  font-size: 0.9em;
+  overflow: hidden;
+  padding: 38rpx 0;
+  border-bottom: 1px solid #F4F4F4;
+  position: relative;
+}
+.list text{
+  float: left;
+  position: relative;
+  font-size: 28rpx;
+  margin-right: 60rpx;
+}
+.list image{
+  position: absolute;
+  top: 50%;
+  width: 11rpx;
+  height: 18rpx;
+  margin-top: -9rpx;
+  right: 0;
+}

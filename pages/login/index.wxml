@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<image src='/image/grant.png' mode='widthFix'></image>
+<text>*我们需要您的授权，以关联您的优宝账号</text>
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>

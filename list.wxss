@@ -1,0 +1,60 @@
+@import "/icon.wxss";
+@import "/base-rpx.wxss";
+Page{
+  background: #FFF;
+}
+.banner_shop{
+  display: inline-block;
+  width: calc(100% - 40rpx);
+  height: 300rpx;
+  margin: 40rpx 20rpx;
+}
+.sort_list{
+  padding: 0 20rpx;
+}
+.sort_list li{
+  padding-right: 50rpx;
+  font-size: 28rpx;
+  color:#c0c0c0;
+}
+.sort_list li.active{
+  color:#0e0e0e;
+}
+.shop_item{
+  margin:0 20rpx;
+  padding:40rpx 0;
+  border-bottom:1px solid #c0c0c0;
+}
+.shop_img{
+  margin-right: 20rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 4rpx;
+}
+.shop_name{
+  font-size: 30rpx;
+  color:#2f2f2f;
+}
+.shop_more{
+  margin:26rpx 0;
+  font-size: 22rpx;
+  color:#707070;
+}
+.evaluate{
+  display: inline-block;
+  margin-right: 10rpx;
+  padding:0 20rpx 0 10rpx;
+  border-right: 1px solid #c0c0c0;
+  color: #fece00;
+}
+.shop_addr{
+  font-size: 22rpx;
+  color:#575757;
+}
+.price{
+  font-size:30rpx;
+  color:#ed6e68;
+}
+.distance{
+  color: #bbbbbb;
+}

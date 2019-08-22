@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<view id='top'>
+    <view>
+        <image src='/image/success.png' mode='widthFix'></image>
+        <text>付款成功！</text>
+    </view>
+    <view id='top_md'>{{message}}</view>
+    <button bindtap='go_home'>返回首页</button>
+</view>
+<view id='ticket' wx:if="{{list.length > 0}}">
+    <text>限时好礼</text>
+    <view class='ticket' wx:for='{{list}}' wx:key="{{index}}">
+        <image src='/image/ticket_bg.png' mode='widthFix'></image>
+        <view>
+            <text class='title'>{{item.title}}</text>
+            <text class='money'>{{item.money}}元</text>
+            <text class='button {{arr[index]==0?"click":""}}' data-id='{{item.id}}' data-eq='{{index}}'
+                  bindtap='{{arr[index]==1?"get_tic":""}}'>{{arr[index]==1?"领取":"已领取"}}
+            </text>
+        </view>
+    </view>
+    <text id='more' bindtap='go_more'>查看更多 ></text>
+</view>
+<view class="coupon_gift" wx:if="{{isShowGift}}">
+    <text class="gift_tips">系统赠送了您{{coupon_gift.length}}张优惠券</text>
+    <view class='coupon_list' wx:for="{{coupon_gift}}" wx:key="{{index}}">
+        <image src='/image/de_coupon.png'></image>
+        <view class="coupon_info">
+            <text class='coupon_list1'>￥</text>
+            <text class='coupon_list2'>{{item.coupon_t_money}}</text>
+            <text class='coupon_list3'>{{item.coupon_t_title}}</text>
+            <text class='coupon_list4'>{{item.coupon_t_limit == 0 ? "无使用限制" : "满"+ item.coupon_t_limit + "元可用"}}</text>
+            <text class='coupon_list5'>有效期：{{item.coupon_t_starttime}} - {{item.coupon_t_endtime}}</text>
+        </view>
+        <view class='coupon_action'>
+            <view class="coupon_btn" bindtap="onMemberCoupon">
+                查看
+            </view>
+            <!--<view class="coupon_btn" bindtap="onMemberCoupon" wx:if="{{item.coupon_t_gettype == 1}}">-->
+                <!--购买-->
+            <!--</view>-->
+        </view>
+    </view>
+</view>
+
+<view id='shop_out'>
+    <text>猜你喜欢</text>
+    <view id='shop'>
+        <block wx:for="{{lists}}" wx:key="{{index}}">
+            <view class='shop' data-id="{{item.id}}" bindtap='go_shop'>
+                <image src='{{item.seller_logo}}' mode='widthFix'></image>
+                <view class='shop_content'>
+                    <text>{{item.seller_name}}</text>
+                    <text class='distance'>{{item.distance}}km</text>
+                    <view>
+                        <image src='/image/service.png' mode='widthFix'></image>
+                        {{item.seller_tag}}
+                    </view>
+                    <view>地址： {{item.seller_address}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<official-account bindload="officialLoad" binderror="officialError"></official-account>
+
+<view id='fixed' bindtap='close' wx:if="{{show_}}"></view>
+<view id='fixed_' wx:if="{{show_}}">
+    <image src='/image/five.png' id='bg_' mode='widthFix' bindtap="jumpToNearby"></image>
+    <view id='view_in'>
+        <view class='list_in' wx:for='{{first_list}}' wx:key="{{index}}">
+            <image src='/image/three.png' mode='widthFix'></image>
+            <text class='list_in_ list_in_1'>￥</text>
+            <text class='list_in_ list_in_2'>{{item.money}}</text>
+            <text class='list_in_ list_in_3'>{{item.title}}</text>
+            <text class='list_in_ list_in_4'>{{item.limit==0?"无门槛通用券":"满"+item.limit+"元可用"}}</text>
+            <text class='list_in_ list_in_5' data-id='{{item.id}}' bindtap='get'>立即领取</text>
+            <text class='list_in_ list_in_6'>有效期:{{item.start}} 至 {{item.end}}</text>
+        </view>
+    </view>
+    <image id='list_closed' bindtap='list_closed' src='/image/closed.png' mode='widthFix'></image>
+</view>
+  

@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ticket_list/index",
+    "pages/codeget_vouchers/index",
+    "pages/codeclean/index",
+    "pages/home/index",
+    "pages/bill_detail/index",
+    "pages/map/index",
+    "pages/y_pay/index",
+    "pages/receive/index",
+    "pages/search/index",
+    "pages/search_/index",
+    "pages/help/index",
+    "pages/rule/index",
+    "pages/help_detail/index",
+    "pages/navigation/index",
+    "pages/bill/index",
+    "pages/integral/index",
+    "pages/integraldetail/index",
+    "pages/register/index",
+    "pages/personal_/index",
+    "pages/personal/index",
+    "pages/station_detail/index",
+    "pages/share/index",
+    "pages/shop_detail/index",
+    "pages/pay_/index",
+    "pages/pay_ok/index",
+    "pages/cleanshop/index",
+    "pages/login_/index",
+    "pages/login/index",
+    "pages/ticket_detail/index",
+    "pages/coupon_detail/index",
+    "pages/activity/index",
+    "pages/buy/index",
+    "pages/clean/index",
+    "pages/clean_detail/index",
+    "pages/carbeaty_detail/index",
+    "pages/beatyshop/index",
+    "pages/cashticket_list/index",
+    "pages/etc_tips/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于展示您周边的加油站"
+    }
+  },
+  "usingComponents": {
+    "layout": "/static/layout/index",
+    "uView": "/static/ubutton/index",
+    "seller-item": "/static/seller-item/index",
+    "station-card": "/static/station-card/index",
+    "coupon-card": "/static/coupon-card/index",
+    "loading": "/static/spin/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx697ddd7f9501ab84"
+  ]
+}

@@ -1,0 +1,27 @@
+<view class="ub-layout">
+    <slot></slot>
+    <modal-box class="authorizeModal {{mobileBindModal ?'show':''}}" wx:if="{{mobileBindModal}}">
+        <dialog>
+            <view class="bg-img" style="background:#fff;height:520rpx;">
+                <bar class="justify-end none-bg text-white" wx:if="{{!pageBlock}}">
+                    <text class="modal-action" bindtap="onCloseMobileBindModal"></text>
+                </bar>
+                <view class="modal-tips">
+                    <text class="text-xxl text-black">绑定手机号</text>
+                    <text class="text-df text-gray">我们需要您的授权以绑定手机号，为您带来更多的优惠和更完善的体验。</text>
+                </view>
+                <form-group>
+                    <view class="title">+86</view>
+                    <input placeholder="请输入手机号码" class="radius" name="input" bindinput="mobileBind_mobileInput"></input>
+                </form-group>
+                <form-group>
+                    <input placeholder="验证码" class="radius" name="input" bindinput="mobileBind_seccodeInput"></input>
+                    <button class="radius shadow xs" open-type="getUserInfo" bindgetuserinfo="onGetSeccode" disabled="{{mobileBindCfg.disabled}}">{{mobileBindCfg.countText}}</button>
+                </form-group>
+            </view>
+            <bar>
+                <view class='action authorizeModal-footer' bindtap='onMobileBind'>绑定</view>
+            </bar>
+        </dialog>
+    </modal-box>
+</view>

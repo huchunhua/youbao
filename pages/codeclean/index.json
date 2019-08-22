@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "中油优宝",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "i-spin": "/static/spin/index"
+  }
+}

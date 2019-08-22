@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view id='title'>
+  签到规则
+</view>
+<view id='content'>
+  <import src="../../wxParse/wxParse.wxml"/>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

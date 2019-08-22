@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view id='integral'>
+  <view class="avater cf">
+    <image class="fl avaterimg" src="{{options.member_avatar}}"></image>
+    <view class="fl infowrap">
+      <open-data id="nickname" type="userNickName" wx:if="{{!nickname}}"  class="name"></open-data>
+      <view class="grade">
+        <image class="icon_grade" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/icon_merber.png" wx:if="{{options.member_level != 0}}"></image>
+        {{options.member_level == 0 ? '普通用户':''}}
+        {{options.member_level == 1 ? '黄金会员':''}}
+        {{options.member_level == 2 ? '铂金会员':''}}
+        {{options.member_level == 3 ? '钻石会员':''}}
+      </view>
+    </view>
+    <view class="fr todetail" bindtap="toIntegraldetail">
+      <image class="icon_integral" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/oil/person/icon_integral.png"></image>
+      积分{{options.member_integral}}
+    </view>
+  </view>
+  <view class="integral_desc">
+    <view class="block_tit">积分说明</view>
+    <view class="desc_content">
+      <rich-text nodes="{{data.score_setting.val}}"></rich-text>
+    </view>
+  </view>
+  <view class="grade_desc">
+    <view class="block_tit">会员等级说明</view>
+    <view class="desc_content">
+      <rich-text nodes="{{data.level_setting.val}}"></rich-text>
+    </view>
+  </view>
+</view>

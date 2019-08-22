@@ -1,0 +1,57 @@
+<item class="seller-item">
+    <view class="item-body">
+        <uView class="station-logo" bindtap="onStation"
+               data-id="{{sellerInfo.id}}" data-type="{{sellerInfo.seller_type}}"
+               wx:if="{{sellerInfo.seller_type == 1}}">
+            <image class="radius lg" src="https://youbao-1251769479.cos.ap-chengdu.myqcloud.com/station-logo.png">
+                <tag class="badge" wx:if="{{false}}"></tag>
+            </image>
+        </uView>
+        <uView class="station-logo" bindtap='onStation'
+               data-id="{{sellerInfo.id}}" data-type="{{sellerInfo.seller_type}}"
+               wx:if="{{sellerInfo.seller_type == 2}}">
+            <image class="radius lg" src="{{sellerInfo.seller_logo}}">
+                <tag class="badge" wx:if="{{false}}"></tag>
+            </image>
+        </uView>
+        <uView class='content' bindtap="onStation" data-id="{{sellerInfo.id}}" data-type="{{sellerInfo.seller_type}}">
+            <view class="seller-name">
+                <text class="station-name">{{sellerInfo.seller_name}}</text>
+                <image class="radius lg station-tag" src="/assets/images/icon-distcount.png"
+                       wx:if="{{sellerInfo.seller_isDiscount}}"/>
+                <image class="radius lg station-tag" src="/assets/images/icon-reduce.png"
+                       wx:if="{{sellerInfo.seller_isReduce && sellerInfo.seller_type == 1}}"/>
+            </view>
+            <view class='text-gray text-sm seller-extend'>
+                <view class="seller-oil" wx:if="{{sellerInfo.seller_type == 1}}">
+                    <tag class="line-orange radius sm oil-tag" wx:if="{{sellerInfo.seller_oil.price_0}}">0#</tag>
+                    <tag class="line-orange radius sm oil-tag" wx:if="{{sellerInfo.seller_oil.price_92}}">92#</tag>
+                    <tag class="line-orange radius sm oil-tag" wx:if="{{sellerInfo.seller_oil.price_95}}">95#</tag>
+                    <tag class="line-orange radius sm oil-tag" wx:if="{{sellerInfo.seller_oil.price_98}}">98#</tag>
+                </view>
+                <view class="seller-service" wx:if="{{sellerInfo.seller_type != 1}}">
+                    <view><image class="lg item-icon" src="/assets/images/icon-service.png"/>{{sellerInfo.seller_service}}</view>
+                </view>
+            </view>
+            <view class='text-gray text-sm seller-address'>{{sellerInfo.seller_address}}</view>
+        </uView>
+        <view class='action' bindtap="onLocation">
+            <image class="lg item-icon" src="/assets/images/icon-nav.png"/>
+            <view class='text-grey text-sm'>{{sellerInfo.seller_distance}}km</view>
+        </view>
+    </view>
+    <view class="item-footer {{!deploy ? 'deploy' : ''}}" style="height: {{sellerInfo.deploy_height}}rpx"
+          wx:if="{{sellerInfo.deploy_height > 0}}">
+        <icon class="foot-action icon-{{!deploy ? 'unfold' : 'fold'}}" bindtap="showStationExtend"
+              data-index="{{index}}" wx:if="{{sellerInfo.deploy_height > 50}}"/>
+        <view class='foot-item text-gray text-sm' wx:if="{{sellerInfo.seller_isPromotion}}">
+            <image class="lg item-icon" src="/assets/images/icon-activity.png"/>
+            <text>{{sellerInfo.seller_oil.remark}}</text>
+        </view>
+        <view class='foot-item text-gray text-sm' wx:if="{{sellerInfo.seller_isDiscount}}"
+              wx:for="{{sellerInfo.seller_coupon}}" wx:for-item="coupon" wx:key="{{index}}">
+            <image class="lg item-icon" src="/assets/images/icon-coupon.png"/>
+            <text>{{coupon.coupon_t_title}}</text>
+        </view>
+    </view>
+</item>
